@@ -1,0 +1,8 @@
+INDEX VERSION 1.3+/Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+367568158.index
+4066989192.index
+3688154143.index
+4046061694.index
+2550277115.index
+3377616815.index
+1814493429.index
