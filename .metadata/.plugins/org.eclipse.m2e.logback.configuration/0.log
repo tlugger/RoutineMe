@@ -1,0 +1,97 @@
+2017-02-26 17:22:21,686 [Thread-10] ERROR org.eclipse.jgit.util.FS - fatal: Could not switch to '/Applications/Xcode.app/Contents/Developer/usr/etc/': No such file or directory
+
+2017-02-26 17:24:04,341 [Worker-2] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/pom.xml
+2017-02-26 17:24:19,019 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.csci4448.RoutineMe:RoutineMeApp:0.0.1-SNAPSHOT @ /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/pom.xml.
+2017-02-26 17:24:26,841 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RoutineMeApp/src/main/java
+2017-02-26 17:24:26,870 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /RoutineMeApp/src/main/resources
+2017-02-26 17:24:26,871 [Worker-2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RoutineMeApp/src/test/java
+2017-02-26 17:25:28,319 [Worker-2] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 83 sec
+2017-02-26 17:25:34,211 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:25:34,319 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:25:34,323 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:25:34,424 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:25:47,095 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:25:47,123 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:25:47,125 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:25:47,125 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:25:48,224 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:25:48,225 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:25:48,227 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:25:48,358 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:27:14,438 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.csci4448.RoutineMe:RoutineMeApp:0.0.1-SNAPSHOT @ /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/pom.xml.
+2017-02-26 17:27:18,610 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:27:18,645 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:27:18,648 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:27:18,649 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:27:18,785 [Worker-3] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of RoutineMeApp
+2017-02-26 17:27:18,827 [Worker-3] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for RoutineMeApp
+2017-02-26 17:27:18,838 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:27:19,952 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:27:19,953 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:27:19,955 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:27:19,957 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:28:24,897 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:28:25,304 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:28:25,307 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:28:25,307 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:28:27,340 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:28:27,341 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:28:27,343 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:28:27,357 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:28:54,937 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:28:54,981 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:28:54,983 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:28:54,992 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:29:30,451 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:29:30,494 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:29:30,496 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:29:30,504 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:29:40,473 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:29:40,475 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:29:40,477 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:29:40,483 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:30:49,446 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:30:49,492 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:30:49,495 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:30:49,495 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:31:03,408 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:31:03,441 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:31:03,443 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:31:03,456 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:32:56,501 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:32:56,560 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:32:56,563 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:32:56,617 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:33:23,626 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:33:23,627 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:33:23,629 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:33:23,630 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:33:57,549 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:33:57,587 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:33:57,589 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:33:57,627 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:34:00,981 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:34:00,982 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:34:00,985 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:34:00,986 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:34:43,711 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2017-02-26 17:35:10,202 [Worker-7] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp
+2017-02-26 17:35:10,247 [Worker-7] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B tomcat7:run
+2017-02-26 17:37:16,949 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:37:17,001 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:37:17,003 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:37:17,012 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:37:19,040 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:37:19,041 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:37:19,043 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:37:19,054 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources
+2017-02-26 17:37:28,479 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2017-02-26 17:37:28,546 [Worker-7] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp
+2017-02-26 17:37:28,547 [Worker-7] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B tomcat7:run
+2017-02-26 17:38:31,866 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2017-02-26 17:38:31,931 [Worker-10] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp
+2017-02-26 17:38:31,931 [Worker-10] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B tomcat7:run
+2017-02-26 17:39:18,418 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:39:18,498 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-26 17:39:18,501 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-26 17:39:18,637 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tylerlugger/Dropbox/School/CSCI4448/RoutineMe/RoutineMeApp/src/test/resources

@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [01/Mar/2017:18:12:24 -0700] "GET /RoutineMe HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [01/Mar/2017:18:12:24 -0700] "GET /RoutineMe/ HTTP/1.1" 200 267 http-bio-8080-exec-2 200
+0:0:0:0:0:0:0:1 - - [01/Mar/2017:18:12:28 -0700] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [01/Mar/2017:18:12:34 -0700] "GET /RoutineMe/welcome HTTP/1.1" 200 281 http-bio-8080-exec-4 140
