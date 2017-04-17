@@ -1,4 +1,4 @@
-package spring.controllers;
+package spring.controllers.Routine;
 import org.springframework.stereotype.Controller;
 import java.util.ArrayList;
 

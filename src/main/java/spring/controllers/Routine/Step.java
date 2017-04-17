@@ -1,4 +1,4 @@
-package spring.controllers;
+package spring.controllers.Routine;
 import org.springframework.stereotype.Controller;
 /**
  * Created by Nhi on 4/11/17.
