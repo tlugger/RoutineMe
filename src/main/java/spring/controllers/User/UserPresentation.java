@@ -6,5 +6,4 @@ package spring.controllers.User;
 public class UserPresentation {
     public String avatar;
 
-    public updateAvatar
 }
