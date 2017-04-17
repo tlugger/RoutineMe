@@ -1,4 +1,4 @@
-package spring.controllers.Routine;
+package spring.controllers;
 
 public class LoginBean {
     private String email;

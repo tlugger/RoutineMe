@@ -1,4 +1,4 @@
-package spring.controllers.Routine;
+package spring.controllers;
 
 /**
  * Created by Nhi on 4/16/17.

@@ -1,4 +1,4 @@
-package spring.controllers.Routine;
+package spring.controllers;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -34,14 +34,14 @@ public class RoutineBar {
         this.duration = duration;
     }
 
-    public void upvote(User){
+    public void upvote(User user){
 
     }
-    public void downvote(User){
+    public void downvote(User user){
 
     }
-    public void start(User){
-        
+    public void start(User user){
+
     }
 
 }
