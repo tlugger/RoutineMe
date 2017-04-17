@@ -4,9 +4,12 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="/resources/css/main.css" />
     <title>RoutineMe</title>
 </head>
 <body>
+<h1>RoutineMe</h1>
+<h2>Create & View Routines</h2>
 <p>Welcome, ${firstName}</p>
 </body>
 </html>
