@@ -1,170 +1,93 @@
-
 @CHARSET "UTF-8";
 
-
-
-
-
-
-
-
-
 body {
-
-
     background: #f1efee;
-
-
     font-family: Futura, Helvetica, sans-serif;
-
-
     font-weight: 100;
-
-
+    display: flex;
+    justify-content: center;
 }
 
+.wrapper {
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden;
+    width: 100vw;
+}
 
-
-
-
-
+input {
+    border-radius: 0;
+}
 
 h1 {
-
-
     font-weight: 100;
-
-
 }
-
-
-
-
-
-
 
 h2 {
-
-
     text-align: center;
-
-
     font-weight: 300;
-
-
 }
-
-
-
-
-
-
 
 h3 {
-
-
     font-weight: 100;
-
-
 }
-
-
-
-
-
-
 
 h4 {
-
-
     font-weight: 100;
-
-
+    padding: 10px;
 }
-
-
-
-
-
-
 
 p {
-
-
     font-weight: 200;
-
-
 }
 
-
-
-
-
-
-
-.feedContainer {
-
-
-    margin-left: 33.33%;
-
-
-    width: 33.33%;
-
-
+.feed-container {
     text-align: center;
-
-
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-
-
-
-
+.feed {
+    background: #c0c0c8;
+    padding: 10px;
+    width: 33.33vw;
+}
 
 input.submitButton {
-
-
     background: transparent;
-
-
     border: 2px solid black;
-
-
     color: black;
-
-
     font-weight: 500;
-
-
 }
 
-
-
-
-
-
-
-.Field {
-
-
+.field {
     border: none;
-
-
     font-size: 1em;
-
-
     background: #f1efee;
-
-
     padding-left: 0.2em;
-
-
     border-bottom: 2px solid black;
-
-
     outline: none;
-
-
 }
 
+.viewframe {
+    height: 50vh;
+    background: #ffffec;
+    margin: 40px;
+}
+
+.nav-bar-container {
+    position: relative;
+    padding-bottom: 10vh;
+}
+
+.nav-bar {
+    width: 100%;
+    position: relative;
+    height: 50px;
+    top: 0;
+    left: 0;
+    background: white;
+
+}
