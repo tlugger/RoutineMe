@@ -6,13 +6,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.*;
-
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String init(Model model) {
         model.addAttribute("msg", "Enter your email address to sign in or create an account on RoutineMe");
         return "login";
+    }
+
+    @RequestMapping(value = "/routine", method = RequestMethod.GET)
+    public String goToRoutine(Model model, @RequestParam("title") String title){
+        model.addAttribute("title", title);
+        return "routine";
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -27,27 +34,29 @@ public class LoginController {
                 type.setRanking(100);
                 TypeCollection collection = new TypeCollection();
                 collection.addType(type);
-                header.setTitle("Dummy header");
+                header.setTitle("Dummy 1");
                 header.setAuthor("Chandra");
                 header.setDate("Today");
                 header.setDescription("This workout is the bomb diggity");
                 Routine routine = new Routine(header, collection);
                 list.add(routine);
                 list.add(routine);
-                list.add(routine);
-                list.add(routine);
-                list.add(routine);
-                list.add(routine);
-                list.add(routine);
-                list.add(routine);
-                list.add(routine);
-                list.add(routine);
-                list.add(routine);
 
-//                list.add("Warm-up exercise");
-//                list.add("Jogging exercise");
-//                list.add("Yoga exercise");
-//                list.add("Running exercise");
+
+
+                RoutineHeader header2 = new RoutineHeader();
+                Type type2 = new Type();
+                type.setName("Jogging");
+                type.setRanking(100);
+                TypeCollection collection2 = new TypeCollection();
+                collection2.addType(type2);
+                header2.setTitle("Dummy 2");
+                header2.setAuthor("Chandra");
+                header2.setDate("Tomorrow");
+                header2.setDescription("This workout is the bomb diggity");
+                Routine routine2 = new Routine(header2, collection2);
+                list.add(routine2);
+
                 model.addAttribute("routines",list);
                 return "routineFeed";
             } else {
