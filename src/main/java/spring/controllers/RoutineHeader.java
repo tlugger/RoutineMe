@@ -27,19 +27,11 @@ public class RoutineHeader {
         return description;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String title) { this.title = title;}
 
-    }
+    public void setAuthor(String author) { this.author = author; }
 
-    public void setAuthor(String author) {
+    public void setDate(String date) { this.date = date; }
 
-    }
-
-    public void setDate(String date) {
-
-    }
-
-    public void setDescription(String description) {
-
-    }
+    public void setDescription(String description) { this.description = description; }
 }

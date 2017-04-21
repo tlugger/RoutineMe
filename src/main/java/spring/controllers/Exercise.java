@@ -9,9 +9,7 @@ public class Exercise {
     private String title;
     private StepCollection stepCollection;
 
-    public String getTitle() {
-        return title;
-    }
+    public String getTitle() {return title;}
 
     public StepCollection getStepCollection() {
         return stepCollection;

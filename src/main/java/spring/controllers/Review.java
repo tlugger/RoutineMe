@@ -12,19 +12,19 @@ public class Review {
     private int rating;
 
     public String getAuthor() {
-        return this.author;
+        return author;
     }
 
     public String getDate() {
-        return this.date;
+        return date;
     }
 
     public String getContent() {
-        return this.content;
+        return content;
     }
 
     public int getRating() {
-        return this.rating;
+        return rating;
     }
 
     public void setAuthor(String author) {
