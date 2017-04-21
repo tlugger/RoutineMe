@@ -20,12 +20,34 @@ public class LoginController {
         if (login != null && login.getEmail() != null & login.getPassword() != null) {
             if (login.getEmail().equals("chandra") && login.getPassword().equals("chandra123")) {
                 model.addAttribute("msg", "welcome" + login.getEmail());
-                List<String> list = new ArrayList<String>();
-                list.add("Weightlifting exercise");
-                list.add("Warm-up exercise");
-                list.add("Jogging exercise");
-                list.add("Yoga exercise");
-                list.add("Running exercise");
+                List<Routine> list = new ArrayList<Routine>();
+                RoutineHeader header = new RoutineHeader();
+                Type type = new Type();
+                type.setName("Running");
+                type.setRanking(100);
+                TypeCollection collection = new TypeCollection();
+                collection.addType(type);
+                header.setTitle("Dummy header");
+                header.setAuthor("Chandra");
+                header.setDate("Today");
+                header.setDescription("This workout is the bomb diggity");
+                Routine routine = new Routine(header, collection);
+                list.add(routine);
+                list.add(routine);
+                list.add(routine);
+                list.add(routine);
+                list.add(routine);
+                list.add(routine);
+                list.add(routine);
+                list.add(routine);
+                list.add(routine);
+                list.add(routine);
+                list.add(routine);
+
+//                list.add("Warm-up exercise");
+//                list.add("Jogging exercise");
+//                list.add("Yoga exercise");
+//                list.add("Running exercise");
                 model.addAttribute("routines",list);
                 return "routineFeed";
             } else {

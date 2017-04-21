@@ -7,7 +7,9 @@ import java.util.ArrayList;
  */
 @Controller
 public class TypeCollection {
-    public ArrayList<Type> collection;
+    private ArrayList<Type> collection = new ArrayList<Type>();
+
+    public void addType(Type type) { collection.add(type); }
 
     public void sortAlphbetically() { }
 
