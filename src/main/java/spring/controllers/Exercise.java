@@ -9,16 +9,18 @@ public class Exercise {
     private String title;
     private StepCollection stepCollection;
 
-    public String getTitle() {return title;}
+    Exercise(){
+        this.title = "";
+        this.stepCollection = new StepCollection();
+    }
 
+    public String getTitle() {return title;}
     public StepCollection getStepCollection() {
         return stepCollection;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
-
     public void setStepCollection(StepCollection stepCollection) {
         this.stepCollection = stepCollection;
     }

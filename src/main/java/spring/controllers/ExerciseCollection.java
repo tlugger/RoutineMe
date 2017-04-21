@@ -7,8 +7,12 @@ import java.util.ArrayList;
  */
 @Controller
 public class ExerciseCollection {
-    public ArrayList<StepCollection> collection;
+    public ArrayList<Exercise> collection;
 
+    ExerciseCollection(){
+        Exercise exercise = new Exercise();
+        this.collection.add(exercise);
+    }
     public void addExercise(String addExerciseValue) { }
     public void removeExercise(String removeExerciseValue) { }
 
