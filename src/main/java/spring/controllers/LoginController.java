@@ -31,31 +31,33 @@ public class LoginController {
             if (login.getEmail().equals("chandra") && login.getPassword().equals("chandra123")) {
                 model.addAttribute("msg", "welcome" + login.getEmail());
                 List<Routine> list = new ArrayList<Routine>();
+
+                Routine routine = new Routine();
                 RoutineHeader header = new RoutineHeader();
                 Type type = new Type();
+                TypeCollection collection = new TypeCollection();
                 type.setName("Running");
                 type.setRanking(100);
-                TypeCollection collection = new TypeCollection();
                 collection.addType(type);
                 header.setTitle("Dummy 1");
                 header.setAuthor("Chandra");
                 header.setDate("Today");
                 header.setDescription("This workout is the bomb diggity");
-                Routine routine = new Routine(header, collection);
                 list.add(routine);
                 list.add(routine);
 
+                Routine routine2 = new Routine();
                 RoutineHeader header2 = new RoutineHeader();
+                TypeCollection collection2 = new TypeCollection();
                 Type type2 = new Type();
                 type.setName("Jogging");
                 type.setRanking(100);
-                TypeCollection collection2 = new TypeCollection();
                 collection2.addType(type2);
                 header2.setTitle("Dummy 2");
                 header2.setAuthor("Chandra");
                 header2.setDate("Tomorrow");
                 header2.setDescription("This workout is the bomb diggity");
-                Routine routine2 = new Routine(header2, collection2);
+
                 list.add(routine2);
 
                 model.addAttribute("routines",list);

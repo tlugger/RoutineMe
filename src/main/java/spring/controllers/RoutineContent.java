@@ -9,9 +9,9 @@ public class RoutineContent {
     private ExerciseCollection exerciseCollection;
     private TypeCollection typeCollection;
 
-    public void addExercise(Exercise exercise) { }
+    //public void addExercise(Exercise exercise) { exerciseCollection.addExercise(exercise); }
     public void addType(Type type) { }
     public void addReview(String string) { }
-    public void display() { }
+    //public void display() { }
 }
 

@@ -10,6 +10,11 @@ import java.util.ArrayList;
 public class StepCollection{
     public ArrayList<Step> collection;
 
-    public void addStep(String addStepValue) { }
+    StepCollection(){
+        Step step = new Step();
+        this.collection.add(step);
+    }
+
+    public void addStep(Step step) { this.collection.add(step); }
     public void removeStep(String removeStepValue) { }
 }

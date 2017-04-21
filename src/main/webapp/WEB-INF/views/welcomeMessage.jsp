@@ -7,6 +7,6 @@
     <title>RoutineMe</title>
 </head>
 <body>
-<p>Welcome, ${firstName}</p>
+<p>Welcome to RoutineMe</p>
 </body>
 </html>
