@@ -9,22 +9,22 @@ public class Review {
     private String author;
     private String date;
     private String content;
-    private String rating;
+    private int rating;
 
     public String getAuthor() {
-        return author;
+        return this.author;
     }
 
     public String getDate() {
-        return date;
+        return this.date;
     }
 
     public String getContent() {
-        return content;
+        return this.content;
     }
 
-    public String getRating() {
-        return rating;
+    public int getRating() {
+        return this.rating;
     }
 
     public void setAuthor(String author) {
@@ -39,9 +39,11 @@ public class Review {
         this.content = content;
     }
 
-    public void setRating(String rating) {
-        this.rating = rating;
+    public void increseRating() {
+        this.rating += 1;
     }
+
+    public void decreaseRating(){ this.rating -= 1; }
 
 }
 
