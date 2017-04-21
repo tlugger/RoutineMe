@@ -17,8 +17,11 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/routine", method = RequestMethod.GET)
-    public String goToRoutine(Model model, @RequestParam("title") String title){
+    public String goToRoutine(Model model, @RequestParam("title") String title, @RequestParam("author") String author, @RequestParam("description") String description, @RequestParam("date") String date){
         model.addAttribute("title", title);
+        model.addAttribute("author", author);
+        model.addAttribute("date", date);
+        model.addAttribute("description", description);
         return "routine";
     }
 
@@ -41,8 +44,6 @@ public class LoginController {
                 Routine routine = new Routine(header, collection);
                 list.add(routine);
                 list.add(routine);
-
-
 
                 RoutineHeader header2 = new RoutineHeader();
                 Type type2 = new Type();

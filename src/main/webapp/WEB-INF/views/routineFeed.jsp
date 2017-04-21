@@ -23,7 +23,7 @@
         <p>Welcome, ${firstName}</p>
         <c:forEach varStatus="loop" items="${routines}" var="routine">
             <div class="viewframe">
-                <a href="routine?title=${routine.getRoutineHeader().getTitle()}">
+                <a href="routine?title=${routine.getRoutineHeader().getTitle()}&author=${routine.getRoutineHeader().getAuthor()}&date=${routine.getRoutineHeader().getDate()}&description=${routine.getRoutineHeader().getDescription()}">
                     <p>
                         ${routine.getRoutineHeader().getTitle()}
                     </p>

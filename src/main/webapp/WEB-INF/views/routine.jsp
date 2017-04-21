@@ -11,8 +11,11 @@
 </head>
 <body>
     <div align="center">
-        <h1>Routine1</h1>
+        <h1>Routine</h1>
         <div>${title}</div>
+        <div>Author: ${author}</div>
+        <div>Date added: ${date}</div>
+        <div>${description}</div>
     </div>
 </body>
 </html>
