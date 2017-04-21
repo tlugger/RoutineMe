@@ -9,6 +9,11 @@ import java.util.ArrayList;
 public class TypeCollection {
     private ArrayList<Type> collection = new ArrayList<Type>();
 
+    TypeCollection(){
+        Type type = new Type();
+        this.collection.add(type);
+    }
+
     public void addType(Type type) { collection.add(type); }
 
     public void sortAlphbetically() { }

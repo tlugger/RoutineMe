@@ -11,6 +11,13 @@ public class RoutineHeader {
     private String date;
     private String description;
 
+    RoutineHeader(){
+        this.title = "";
+        this.author = "";
+        this.date = "";
+        this.description = "";
+    }
+
     public String getTitle() {
         return title;
     }

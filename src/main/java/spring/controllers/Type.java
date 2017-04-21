@@ -9,18 +9,21 @@ public class Type {
     private String name;
     private int ranking;
 
+
+    Type(){
+        this.name = "";
+        this.ranking = 10;
+    }
+
     public String getName() {
         return name;
     }
-
     public int getRanking() {
         return ranking;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public void setRanking(int ranking) {
         this.ranking = ranking;
     }
