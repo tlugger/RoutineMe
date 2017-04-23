@@ -10,15 +10,15 @@ import java.util.List;
  */
 @Controller
 public class RoutineCollection { /* extends FeedItemFactory{ */
-    public List<Routine> collection;
-    public List<Routine> tempSortedCollection;
+    public ArrayList<Routine> collection;
+    public ArrayList<Routine> tempSortedCollection;
 
-    RoutineCollection(List<Routine> routineList){
+    RoutineCollection(ArrayList<Routine> routineList){
         this.collection = routineList;
     }
 
 
-    public List<Routine> sortNormal() {
+    public ArrayList<Routine> sortNormal() {
         return collection;
     }
 

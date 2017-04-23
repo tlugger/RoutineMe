@@ -13,14 +13,10 @@ public class RoutineContent {
 
     public void addExercise(Exercise exercise) { this.exerciseCollection.addExercise(exercise); }
     public void addType(Type type) { }
-    public void addReview(Review review) {
-        this.reviewCollection.addReview(review);
-    }
+    public void addReview(Review review) { this.reviewCollection.addReview(review); }
 
     public void removeExercise(Exercise exercise) { this.exerciseCollection.removeExercise(exercise); }
     public void removeType(Type type) { }
-    public void removeReview(Review review) {
-        this.reviewCollection.removeReview(review);
-    }
+    public void removeReview(Review review) { this.reviewCollection.removeReview(review); }
 }
 

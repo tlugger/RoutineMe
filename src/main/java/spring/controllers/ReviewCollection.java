@@ -17,6 +17,6 @@ public class ReviewCollection {
     public void sortByDate() { }
     public void sortByRating() { }
     public void addReview(Review review) { this.collection.add(review); }
-    public void removeReview(Review review) { this.collection.add(review); }
+    public void removeReview(Review review) { this.collection.remove(review); }
 }
 
