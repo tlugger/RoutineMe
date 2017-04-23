@@ -13,7 +13,7 @@ public class ExerciseCollection {
         Exercise exercise = new Exercise();
         this.collection.add(exercise);
     }
-    public void addExercise(String addExerciseValue) { }
+    public void addExercise(Exercise addExerciseValue) { this.collection.add(addExerciseValue); }
     public void removeExercise(String removeExerciseValue) { }
 
 }

@@ -8,10 +8,10 @@ import org.springframework.stereotype.Controller;
 public class RoutineContent {
     private ExerciseCollection exerciseCollection;
     private TypeCollection typeCollection;
+    private ReviewCollection reviewCollection;
 
-    //public void addExercise(Exercise exercise) { exerciseCollection.addExercise(exercise); }
+    public void addExercise(Exercise exercise) { this.exerciseCollection.addExercise(exercise); }
     public void addType(Type type) { }
-    public void addReview(String string) { }
-    //public void display() { }
+    public void addReview(Review review) { this.reviewCollection.(review);}
 }
 

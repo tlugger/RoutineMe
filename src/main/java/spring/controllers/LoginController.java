@@ -36,6 +36,8 @@ public class LoginController {
                 RoutineHeader header = new RoutineHeader();
                 Type type = new Type();
                 TypeCollection collection = new TypeCollection();
+                RoutineContent content = new RoutineContent();
+
                 type.setName("Running");
                 type.setRanking(100);
                 collection.addType(type);
@@ -43,6 +45,8 @@ public class LoginController {
                 header.setAuthor("Chandra");
                 header.setDate("Today");
                 header.setDescription("This workout is the bomb diggity");
+                routine.setRoutineHeader(header);
+                routine.setTypeCollection(collection);
                 list.add(routine);
                 list.add(routine);
 
@@ -57,6 +61,8 @@ public class LoginController {
                 header2.setAuthor("Chandra");
                 header2.setDate("Tomorrow");
                 header2.setDescription("This workout is the bomb diggity");
+                routine2.setRoutineHeader(header2);
+                routine2.setTypeCollection(collection2);
 
                 list.add(routine2);
 
