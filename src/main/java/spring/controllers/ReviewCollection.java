@@ -7,10 +7,16 @@ import java.util.ArrayList;
  */
 @Controller
 public class ReviewCollection {
-    private ArrayList<ReviewCollection> collection;
+    private ArrayList<Review> collection;
 
+    ReviewCollection(){
+        Review review = new Review();
+        this.collection.add(review);
+    }
     public void sortByAuthor() { }
     public void sortByDate() { }
     public void sortByRating() { }
+    public void addReview(Review review) { this.collection.add(review); }
+    public void removeReview(Review review) { this.collection.add(review); }
 }
 

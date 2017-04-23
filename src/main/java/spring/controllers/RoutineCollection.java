@@ -17,9 +17,6 @@ public class RoutineCollection { /* extends FeedItemFactory{ */
         this.collection = routineList;
     }
 
-    public void addRoutine(Routine routine){
-        collection.add(routine);
-    }
 
     public List<Routine> sortNormal() {
         return collection;
@@ -34,7 +31,10 @@ public class RoutineCollection { /* extends FeedItemFactory{ */
         });
     }
 
+    public void addRoutine(Routine routine){
+        this.collection.add(routine);
+    }
     public void removeRoutine(Routine routine) {
-        collection.remove(routine);
+        this.collection.remove(routine);
     }
 }

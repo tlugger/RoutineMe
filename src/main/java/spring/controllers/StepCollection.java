@@ -16,5 +16,5 @@ public class StepCollection{
     }
 
     public void addStep(Step step) { this.collection.add(step); }
-    public void removeStep(String removeStepValue) { }
+    public void removeStep(Step step) { this.collection.remove(step);}
 }

@@ -14,6 +14,6 @@ public class ExerciseCollection {
         this.collection.add(exercise);
     }
     public void addExercise(Exercise addExerciseValue) { this.collection.add(addExerciseValue); }
-    public void removeExercise(String removeExerciseValue) { }
+    public void removeExercise(Exercise removeExerciseValue) { this.collection.remove(removeExerciseValue); }
 
 }
