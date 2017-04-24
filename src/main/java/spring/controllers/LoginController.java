@@ -37,10 +37,8 @@ public class LoginController {
                 Type type = new Type();
                 TypeCollection collection = new TypeCollection();
                 RoutineContent content = new RoutineContent();
+                Exercise exercise = new Exercise();
 
-                type.setName("Running");
-                type.setRanking(100);
-                collection.addType(type);
                 header.setTitle("Dummy 1");
                 header.setAuthor("Chandra");
                 header.setDate("Today");
@@ -52,17 +50,16 @@ public class LoginController {
 
                 Routine routine2 = new Routine();
                 RoutineHeader header2 = new RoutineHeader();
-                TypeCollection collection2 = new TypeCollection();
-                Type type2 = new Type();
-                type.setName("Jogging");
-                type.setRanking(100);
-                collection2.addType(type2);
+                Exercise exercise2 = new Exercise();
+                exercise2.setTitle("Plank");
+                exercise2.setExerciseType("Core");
+                exercise2.setTypeRanking(5);
                 header2.setTitle("Dummy 2");
                 header2.setAuthor("Chandra");
                 header2.setDate("Tomorrow");
                 header2.setDescription("This workout is the bomb diggity");
                 routine2.setRoutineHeader(header2);
-                routine2.setTypeCollection(collection2);
+
 
                 list.add(routine2);
 

@@ -8,7 +8,8 @@ import java.util.ArrayList;
 
 @Controller
 public class StepCollection{
-    public ArrayList<Step> collection;
+    private ArrayList<Step> collection;
+
 
     StepCollection(){
         Step step = new Step();
@@ -17,4 +18,5 @@ public class StepCollection{
 
     public void addStep(Step step) { this.collection.add(step); }
     public void removeStep(Step step) { this.collection.remove(step);}
+    public ArrayList<Step> getStepCollection() { return this.collection; }
 }
