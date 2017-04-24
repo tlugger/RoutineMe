@@ -6,8 +6,8 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <link href="<c:url value="resources/css/main.css?some_var_to_bust_cache=24312346" />" rel="stylesheet">
+    <link href="<c:url value="resources/css/main.css?name2=joe5" />" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
     <title>RoutineMe</title>
 </head>
 <body>
@@ -22,12 +22,44 @@
 
         <p>Welcome, ${firstName}</p>
         <c:forEach varStatus="loop" items="${routines}" var="routine">
-            <div class="viewframe">
-                <a href="routine?title=${routine.getRoutineHeader().getTitle()}&author=${routine.getRoutineHeader().getAuthor()}&date=${routine.getRoutineHeader().getDate()}&description=${routine.getRoutineHeader().getDescription()}">
-                    <p>
-                        ${routine.getRoutineHeader().getTitle()}
-                    </p>
-                </a>
+            <a href="routine?title=${routine.getRoutineHeader().getTitle()}&author=${routine.getAuthor()}&date=${routine.getDate()}&description=${routine.getDescription()}">
+                <div class="viewframe">
+                    <div class="header">
+                        <div class="routine-title">
+                            <h1>
+                                ${routine.getTitle()}
+                            </h1>
+                        </div>
+                        <div class="routine-author">
+                            <h3>
+                                ${routine.getAuthor()}
+                            </h3>
+                        </div>
+                        <div class="routine-date">
+                            <h3>
+                                ${routine.getDate()}
+                            </h3>
+                        </div>
+                        <div class="routine-description">
+                            <p class="routine-review-text">
+                                ${routine.getDescription()}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="routine-image">
+                    </div>
+            </a>
+            <div class="action-bar">
+                </div>
+                <div class="reviews">
+                    <c:forEach varStatus="loop" items="${routine.getReviews().getCollection()}" var="review">
+                        <div class="review">
+                            <h3>${review.getAuthor()}</h3>
+                            <h4>${review.getDate()}</h4>
+                            <p>${review.getReviewText()}</p>
+                        </div>
+                    </c:forEach>
+                </div>
             </div>
         </c:forEach>
         </div>

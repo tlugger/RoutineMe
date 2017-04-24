@@ -8,8 +8,7 @@ import java.util.ArrayList;
 @Controller
 public class DraftCollection {
     public ArrayList<Routine> collection;
-    public String collectionType;
 
-    public void addRoutine(Routine routine) { }
-    public void addRoutine(Type type) { }
+    public void addDraft(Routine routine) { }
+    public void removeDraft(Routine routine) { }
 }

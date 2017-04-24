@@ -10,10 +10,16 @@ public class ExerciseCollection {
     public ArrayList<Exercise> collection;
 
     ExerciseCollection(){
-        Exercise exercise = new Exercise();
+        this.collection = new ArrayList<Exercise>();
+    }
+    public void addExercise(Exercise exercise) {
         this.collection.add(exercise);
     }
-    public void addExercise(Exercise addExerciseValue) { this.collection.add(addExerciseValue); }
-    public void removeExercise(Exercise removeExerciseValue) { this.collection.remove(removeExerciseValue); }
+    public void removeExercise(Exercise removeExerciseValue) {
+
+        this.collection.remove(removeExerciseValue);
+    }
+
+    public ArrayList<Exercise> getCollection() { return this.collection; }
 
 }

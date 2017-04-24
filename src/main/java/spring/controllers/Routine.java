@@ -5,31 +5,75 @@ package spring.controllers;
  */
 public class Routine {
     private RoutineHeader header;
-    private TypeCollection typeCollection;
-    private RoutineContent content;
+    private String type;
+    private ExerciseCollection exercises;
+    private ReviewCollection reviews;
+    private RoutineData data;
 
-    Routine(){
-        this.header = new RoutineHeader();
-        this.typeCollection = new TypeCollection();
-        this.content = new RoutineContent();
-
+    public Routine() {
+        this.header = null;
+        this.exercises = null;
+        this.reviews = null;
+        this.type = null;
+        this.data = null;
     }
 
-    Routine( RoutineHeader header, TypeCollection collection, RoutineContent content){
+
+    public Routine( RoutineHeader header, ExerciseCollection exercises, ReviewCollection reviews, String type){
         this.header = header;
-        this.typeCollection = collection;
-        this.content = content;
+        this.exercises = exercises;
+        this.reviews = reviews;
+        this.type = type;
     }
 
-    public RoutineHeader getRoutineHeader(){ return this.header; }
 
-    public TypeCollection getTypeCollection(){ return this.typeCollection; }
+    //wrappers
+    public String getTitle() {
+        return this.header.getTitle();
+    }
+    public String getAuthor() {
+        return this.header.getAuthor();
+    }
+    public String getDate() {
+        return this.header.getDate();
+    }
+    public String getDescription() {
+        return this.header.getDescription();
+    }
 
-    public RoutineContent getRoutineConetent(){ return this.content; }
+    public String getDuration() {
+        return this.data.getDuration();
+    }
+    public String getRating() {
+        return this.data.getRating();
+    }
+    public String getDifficulty() {
+        return this.data.getDifficulty();
+    }
 
-    public void setRoutineHeader(RoutineHeader header) { this.header = header;}
 
-    public void setTypeCollection(TypeCollection collection) { this.typeCollection = collection; }
+    public RoutineHeader getRoutineHeader(){return this.header;}
 
-    public void setRoutineContent(RoutineContent content) { this.content = content; }
+    public String getType(){
+        return this.type;
+    }
+
+    public ExerciseCollection getExercises() { return this.exercises; }
+    public ReviewCollection getReviews() { return this.reviews; }
+
+    public void setRoutineHeader(RoutineHeader header) {
+        this.header = header;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setData(RoutineData data) {
+        this.data = data;
+    }
+
+    public void setExerciseCollection(ExerciseCollection exercises) { this.exercises = exercises; }
+
+    public void setReviewCollection(ReviewCollection reviews) { this.reviews = reviews; }
 }

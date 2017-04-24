@@ -10,8 +10,19 @@ import java.util.ArrayList;
 public class StepCollection{
     private ArrayList<Step> collection;
 
+    public StepCollection() {
 
-    public void addStep(Step step) { this.collection.add(step); }
-    public void removeStep(Step step) { this.collection.remove(step);}
-    public ArrayList<Step> getStepCollection() { return this.collection; }
+        this.collection = new ArrayList<Step>();
+    }
+
+
+    public void addStep(Step step) {
+        this.collection.add(step);
+    }
+    public void removeStep(Step step) {
+        this.collection.remove(step);
+    }
+    public ArrayList<Step> getStepCollection() {
+        return this.collection;
+    }
 }

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
  * Created by Nhi on 4/16/17.
  */
 @Controller
-public class RoutineBar {
+public class RoutineData {
     private String rating;
     private String difficulty;
     private String duration;

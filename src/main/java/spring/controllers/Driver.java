@@ -11,16 +11,8 @@ public class Driver {
     public Feed feed;
     public NavigationBar navBar;
 
-    public void createRoutine(User user) {
-        Routine routine = new Routine();
-    }
-    public void createReview(User user) { }
-    public void createDraft(User user) { }
-
     public void main(){
         User user = new User();
         user.login("chandra","chandra123");
-        createRoutine(user);
-
     }
 }

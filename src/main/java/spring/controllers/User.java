@@ -37,4 +37,13 @@ public class User {
     public void updatePresentation(UserPresentation presentation) {
         this.presentation = presentation;
     }
+
+    public void addCreatedRoutine(Routine routine) {
+        this.activity.addCreatedRoutine(routine);
+    }
+
+    public void addFollowedRoutine(Routine routine) {
+        this.activity.addFollowedRoutine(routine);
+    }
+
 }

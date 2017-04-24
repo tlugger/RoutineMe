@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 public class Review {
     private String author;
     private String date;
-    private String content;
+    private String reviewText;
     private int rating;
 
     public String getAuthor() {
@@ -19,8 +19,8 @@ public class Review {
         return date;
     }
 
-    public String getContent() {
-        return content;
+    public String getReviewText() {
+        return reviewText;
     }
 
     public int getRating() {
@@ -35,8 +35,8 @@ public class Review {
         this.date = date;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setReviewText(String reviewText) {
+        this.reviewText = reviewText;
     }
 
     public void increseRating() {

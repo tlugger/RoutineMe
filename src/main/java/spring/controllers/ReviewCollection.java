@@ -10,13 +10,18 @@ public class ReviewCollection {
     private ArrayList<Review> collection;
 
     ReviewCollection(){
-        Review review = new Review();
-        this.collection.add(review);
+        this.collection = new ArrayList<Review>();
     }
+
     public void sortByAuthor() { }
     public void sortByDate() { }
     public void sortByRating() { }
-    public void addReview(Review review) { this.collection.add(review); }
-    public void removeReview(Review review) { this.collection.remove(review); }
+    public void addReview(Review review) {
+        this.collection.add(review);
+    }
+    public void removeReview(Review review) {
+        this.collection.remove(review);
+    }
+    public ArrayList<Review> getCollection() { return this.collection; }
 }
 

@@ -2,10 +2,16 @@
 
 body {
     background: #f1efee;
-    font-family: Futura, Helvetica, sans-serif;
+    font-family: 'Rubik',Futura, Helvetica, sans-serif;
     font-weight: 100;
     display: flex;
     justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 .wrapper {
@@ -21,6 +27,7 @@ input {
 
 h1 {
     font-weight: 100;
+    color: #9c8383;
 }
 
 h2 {
@@ -30,11 +37,12 @@ h2 {
 
 h3 {
     font-weight: 100;
+    color: #857d91;
 }
 
 h4 {
     font-weight: 100;
-    padding: 10px;
+    color: #cbbcbc;
 }
 
 p {
@@ -51,8 +59,7 @@ p {
 
 .feed {
     background: #c0c0c8;
-    padding: 10px;
-    width: 33.33vw;
+    width: 50vw;
 }
 
 input.submitButton {
@@ -73,8 +80,8 @@ input.submitButton {
 
 .viewframe {
     height: 50vh;
-    background: #ffffec;
-    margin: 40px;
+    background: #fffdfb;
+    width: 100%;
 }
 
 .nav-bar-container {
@@ -88,6 +95,42 @@ input.submitButton {
     height: 50px;
     top: 0;
     left: 0;
-    background: white;
+    background: #fffdfb;
 
+}
+
+.header {
+    text-align: left;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.routine-image {
+    width: 100%;
+    height: 50vh;
+    background: #f1efee;
+}
+
+.action-bar {
+    width: 100%;
+    height: 10vh;
+    background: #fffdfb;
+}
+
+.reviews {
+    text-align: left;
+    background: #fffdfb;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.routine-description {
+    color: #7b5d5d;
+    font-family: 'Questrial', Futura, Helvetica, sans-serif;
+}
+
+.routine-review-text {
+    color: #81796c;
+    font-family: 'Questrial', Futura, Helvetica, sans-serif;
 }

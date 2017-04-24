@@ -7,15 +7,14 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class UserActivity {
-//    public ProgressData progressData;
-//    public RoutineCollection routinesCreated;
-//    public RoutineCollection routinesFollowed;
-//    public DraftCollection drafts;
-//
-//    public addCreatedRoutine(Routine routine) {
-//        routinesCreated.addRoutine(routine);
-//    }
-//    public addFollowedRoutine(Routine routine) {
-//        routinesFollowed.addRoutine(routine);
-//    }
+    public RoutineCollection createdRoutines;
+    public RoutineCollection followingRoutines;
+    public DraftCollection drafts;
+
+    public void addCreatedRoutine(Routine routine) {
+        createdRoutines.addRoutine(routine);
+    }
+    public void addFollowedRoutine(Routine routine) {
+        followingRoutines.addRoutine(routine);
+    }
 }
