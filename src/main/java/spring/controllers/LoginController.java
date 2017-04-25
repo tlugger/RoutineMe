@@ -39,7 +39,7 @@ public class LoginController {
                 ReviewCollection reviews = new ReviewCollection();
 
 
-                header.setTitle("Lift your Spirits!");
+                header.setTitle("On The Go");
                 header.setAuthor("Jose Canizares");
                 header.setDate("April 24, 2017");
                 header.setDescription("A realistic weightlifting exercise for most ages. Give it a go!");

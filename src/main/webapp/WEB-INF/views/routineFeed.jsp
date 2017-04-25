@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="<c:url value="resources/css/main.css?name2=joe5" />" rel="stylesheet">
+    <link href="<c:url value="resources/css/main.css?name3=joe5" />" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
     <title>RoutineMe</title>
 </head>
@@ -22,7 +22,7 @@
 
         <p>Welcome, ${firstName}</p>
         <c:forEach varStatus="loop" items="${routines}" var="routine">
-            <a href="routine?title=${routine.getRoutineHeader().getTitle()}&author=${routine.getAuthor()}&date=${routine.getDate()}&description=${routine.getDescription()}">
+            <a href="routine?title=${routine.getRoutineHeader().getTitle()}&author=${routine.getAuthor()}&date=${routine.getDate()}&description=${routine.getDescription()}&difficulty=${routine.getDifficulty()}&duration=${routine.getDuration()}&rating=${routine.getRating()}">
                 <div class="viewframe">
                     <div class="header">
                         <div class="routine-title">
@@ -36,10 +36,26 @@
                             </h3>
                         </div>
                         <div class="routine-date">
-                            <h3>
+                            <h4>
                                 ${routine.getDate()}
-                            </h3>
+                            </h4>
                         </div>
+                        <div class="routine-difficulty">
+                            <h4>
+                                    Difficulty: ${routine.getDifficulty()}
+                            </h4>
+                        </div>
+                        <div class="routine-duration">
+                            <h4>
+                                    Duration: ${routine.getDuration()}
+                            </h4>
+                        </div>
+                        <div class="routine-rating">
+                            <h4>
+                                    Rating: ${routine.getRating()}
+                            </h4>
+                        </div>
+
                         <div class="routine-description">
                             <p class="routine-review-text">
                                 ${routine.getDescription()}
@@ -50,6 +66,18 @@
                     </div>
             </a>
             <div class="action-bar">
+                <div class="action-bar-icons">
+                    <div class="vote">
+                        <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
+                        <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
+                    </div>
+                    <div class="start-container">
+                        <img class="start" src="<c:url value="resources/images/start.svg"/>"/>
+                    </div>
+                    <div class="bookmark-container">
+                        <img class="bookmark" src="<c:url value="resources/images/bookmark.svg"/>"/>
+                    </div>
+                    </div>
                 </div>
                 <div class="reviews">
                     <c:forEach varStatus="loop" items="${routine.getReviews().getCollection()}" var="review">

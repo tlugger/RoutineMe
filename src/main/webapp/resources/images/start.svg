@@ -1,0 +1,18 @@
+<svg width="16" height="16" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>Ellipse 6</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(708 -925)" figma:type="canvas">
+<g id="Ellipse 6" figma:type="ellipse">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(-708 925)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(-708 925)" fill="#CBACAC"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 16 8C 16 12.4183 12.4183 16 8 16C 3.58172 16 0 12.4183 0 8C 0 3.58172 3.58172 0 8 0C 12.4183 0 16 3.58172 16 8Z"/>
+<path id="path1_stroke_2x" d="M 13.5 8C 13.5 11.0376 11.0376 13.5 8 13.5L 8 18.5C 13.799 18.5 18.5 13.799 18.5 8L 13.5 8ZM 8 13.5C 4.96243 13.5 2.5 11.0376 2.5 8L -2.5 8C -2.5 13.799 2.20101 18.5 8 18.5L 8 13.5ZM 2.5 8C 2.5 4.96243 4.96243 2.5 8 2.5L 8 -2.5C 2.20101 -2.5 -2.5 2.20101 -2.5 8L 2.5 8ZM 8 2.5C 11.0376 2.5 13.5 4.96243 13.5 8L 18.5 8C 18.5 2.20101 13.799 -2.5 8 -2.5L 8 2.5Z"/>
+</defs>
+</svg>

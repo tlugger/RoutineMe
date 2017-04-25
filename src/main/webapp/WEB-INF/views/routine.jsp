@@ -6,16 +6,70 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="<c:url value="resources/css/main.css?some_var_to_bust_cache=24312346"/>" rel="stylesheet">
+    <link href="<c:url value="resources/css/main.css?name2=24312346"/>" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
     <title>RoutineMe Login</title>
 </head>
 <body>
     <div align="center">
-        <h1>Routine</h1>
-        <div>${title}</div>
-        <div>Author: ${author}</div>
-        <div>Date added: ${date}</div>
-        <div>${description}</div>
+        <div class="viewframe">
+            <div class="header">
+                <div class="routine-title">
+                    <h1>
+                        ${title}
+                    </h1>
+                </div>
+                <div class="routine-author">
+                    <h3>
+                        ${author}
+                    </h3>
+                </div>
+                <div class="routine-date">
+                    <h4>
+                        ${date}
+                    </h4>
+                </div>
+                <div class="routine-difficulty">
+                    <h4>
+                        Difficulty: ${difficulty}
+                    </h4>
+                </div>
+                <div class="routine-duration">
+                    <h4>
+                        Duration: ${duration}
+                    </h4>
+                </div>
+                <div class="routine-rating">
+                    <h4>
+                        Rating: ${rating}
+                    </h4>
+                </div>
+
+                <div class="routine-description">
+                    <p class="routine-review-text">
+                        ${description}
+                    </p>
+                </div>
+            </div>
+            <div class="action-bar">
+                <div class="action-bar-icons">
+                    <div class="vote">
+                        <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
+                        <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
+                    </div>
+                    <div class="start-container">
+                        <img class="start" src="<c:url value="resources/images/start.svg"/>"/>
+                    </div>
+                    <div class="bookmark-container">
+                        <img class="bookmark" src="<c:url value="resources/images/bookmark.svg"/>"/>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews">
+
+            </div>
+        </div>
+        </div>
     </div>
 </body>
 </html>
