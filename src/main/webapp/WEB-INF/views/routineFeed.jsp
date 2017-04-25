@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="<c:url value="resources/css/main.css?name3=joe5" />" rel="stylesheet">
+    <link href="<c:url value="resources/css/main.css?name10=jo5" />" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
     <title>RoutineMe</title>
 </head>
