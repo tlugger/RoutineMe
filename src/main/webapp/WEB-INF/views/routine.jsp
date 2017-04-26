@@ -55,7 +55,7 @@
                 <div class="action-bar-icons">
                     <div class="vote">
                             <form action="" method="post">
-                                <button type="upvote" name="foo" value="upvote">
+                                <button type="upvote" name="upvote" value="upvote">
                                     <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
                                 </button>
                             </form>
