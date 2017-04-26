@@ -47,7 +47,7 @@ public class LoginController {
 
                 data.setDuration("10 minutes");
                 data.setDifficulty("5");
-                data.setRating("2");
+                data.setRating(2);
 
                 routine.setData(data);
 
