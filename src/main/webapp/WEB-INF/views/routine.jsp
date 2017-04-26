@@ -66,7 +66,13 @@
                 </div>
             </div>
             <div class="reviews">
-
+                <c:forEach varStatus="loop" items="${reviews.getCollection()}" var="review">
+                    <div class="review">
+                        <h3>${review.getAuthor()}</h3>
+                        <h4>${review.getDate()}</h4>
+                        <p>${review.getReviewText()}</p>
+                    </div>
+                </c:forEach>
             </div>
         </div>
         </div>

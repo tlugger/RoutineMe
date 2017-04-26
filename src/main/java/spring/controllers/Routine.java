@@ -44,7 +44,7 @@ public class Routine {
     public String getDuration() {
         return this.data.getDuration();
     }
-    public String getRating() {
+    public int getRating() {
         return this.data.getRating();
     }
     public String getDifficulty() {
