@@ -30,7 +30,7 @@ public class LoginController {
         if (login != null && login.getEmail() != null & login.getPassword() != null) {
             if (login.getEmail().equals("chandra") && login.getPassword().equals("chandra123")) {
                 model.addAttribute("msg", "welcome" + login.getEmail());
-                List<Routine> list = new ArrayList<Routine>();
+                ArrayList<Routine> list = new ArrayList<Routine>();
 
                 Routine routine = new Routine();
                 RoutineHeader header = new RoutineHeader();
@@ -141,8 +141,44 @@ public class LoginController {
 
                 list.add(routine);
 
+                Routine routine2 = new Routine();
+                routine2 = routine;
+                RoutineHeader routineHeader2 = new RoutineHeader();
+                routineHeader2 = header;
+                routineHeader2.setAuthor("Johnny");
+                routine2.setRoutineHeader(routineHeader2);
 
-                model.addAttribute("routines",list);
+                Routine routine3 = new Routine();
+                routine3 = routine;
+                RoutineHeader routineHeader3 = new RoutineHeader();
+                routineHeader3 = header;
+                routineHeader3.setAuthor("Barnes");
+                routine3.setRoutineHeader(routineHeader3);
+
+                Routine routine4 = new Routine();
+                routine4 = routine;
+                RoutineHeader routineHeader4 = new RoutineHeader();
+                routineHeader4 = header;
+                routineHeader4.setAuthor("Tyler");
+                routine4.setRoutineHeader(routineHeader4);
+
+                list.add(routine2);
+                list.add(routine3);
+                list.add(routine4);
+
+
+                RoutineCollection routineList = new RoutineCollection();
+                routineList.addRoutine(routine);
+                routineList.addRoutine(routine2);
+                routineList.addRoutine(routine3);
+                routineList.addRoutine(routine4);
+                routineList.sortByAuthor();
+
+                System.out.println(routineList.getSortedCollection());
+                model.addAttribute("routines",routineList.getSortedCollection());
+
+
+                //model.addAttribute("routines",list);
                 return "routineFeed";
             } else {
                 model.addAttribute("error", "Invalid Details");
