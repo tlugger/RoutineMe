@@ -25,10 +25,7 @@ public class LoginController {
         if (login != null && login.getEmail() != null & login.getPassword() != null) {
             if (login.getEmail().equals("chandra") && login.getPassword().equals("chandra123")) {
                 model.addAttribute("msg", "welcome" + login.getEmail());
-
-
                 System.out.println("l o g i n ");
-
                 return "redirect:/routineFeed";
             } else {
                 model.addAttribute("error", "Wrong Username or Password");

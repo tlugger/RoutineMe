@@ -6,11 +6,11 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class RoutineData {
-    private String rating;
+    private int rating;
     private String difficulty;
     private String duration;
 
-    public String getRating() {
+    public int getRating() {
         return rating;
     }
 
@@ -22,7 +22,7 @@ public class RoutineData {
         return duration;
     }
 
-    public void setRating(String rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 
@@ -35,9 +35,11 @@ public class RoutineData {
     }
 
     public void upvote(User user){
+        this.rating = this.rating + 1;
 
     }
     public void downvote(User user){
+        this.rating = this.rating - 1;
 
     }
     public void start(User user){

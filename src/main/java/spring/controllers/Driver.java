@@ -40,7 +40,7 @@ public class Driver {
 
         data.setDuration("10 minutes");
         data.setDifficulty("5");
-        data.setRating("2");
+        data.setRating(2);
 
         this.routine.setData(data);
 

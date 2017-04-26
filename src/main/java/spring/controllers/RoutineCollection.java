@@ -13,32 +13,34 @@ import java.util.List;
 @Controller
 public class RoutineCollection {
     public ArrayList<Routine> collection;
-    public ArrayList<Routine> tempSortedCollection;
+    public ArrayList<Routine> sortedCollection;
 
 
     public RoutineCollection() {
         this.collection = new ArrayList<Routine>();
     }
 
-    public RoutineCollection(ArrayList<Routine> routineList){
-        this.collection = routineList;
-    }
+//    public RoutineCollection(ArrayList<Routine> routineList){
+//        this.collection = routineList;
+//    }
 
 
-    public ArrayList<Routine> sortNormal() {
-        return collection;
-    }
+//    public ArrayList<Routine> sortNormal() {
+//        return collection;
+//    }
 
     public void sortByAuthor() {
-//        Collections.sort(collection, new Comparator<Routine>() {
-//            public int compare(Routine o1, Routine o2) {
-//                //Sorts by 'TimeStarted' property
-//                return o1.getRoutineHeader().getAuthor().compareTo(o2.getRoutineHeader().getAuthor());
-//            }
-//        });
+        this.sortedCollection = this.collection;
+        Collections.sort(this.sortedCollection, new Comparator<Routine>() {
+            public int compare(Routine o1, Routine o2) {
+                //Sorts by 'Author' property
+                return o1.getRoutineHeader().getAuthor().compareTo(o2.getRoutineHeader().getAuthor());
+            }
+        });
     }
 
     public ArrayList<Routine> getCollection() { return this.collection; }
+    public ArrayList<Routine> getSortedCollection() { return this.sortedCollection; }
     public void addRoutine(Routine routine){
         this.collection.add(routine);
     }
