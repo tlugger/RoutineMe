@@ -18,6 +18,7 @@ public class RoutineCollection {
 
     public RoutineCollection() {
         this.collection = new ArrayList<Routine>();
+//        System.out.println("hello");
     }
 
 //    public RoutineCollection(ArrayList<Routine> routineList){
@@ -41,9 +42,7 @@ public class RoutineCollection {
 
     public ArrayList<Routine> getCollection() { return this.collection; }
     public ArrayList<Routine> getSortedCollection() { return this.sortedCollection; }
-    public void addRoutine(Routine routine){
-        this.collection.add(routine);
-    }
+    public void addRoutine(Routine routine){ this.collection.add(routine); }
     public void removeRoutine(Routine routine) {
         this.collection.remove(routine);
     }
