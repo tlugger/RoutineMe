@@ -18,17 +18,8 @@ public class RoutineCollection {
 
     public RoutineCollection() {
         this.collection = new ArrayList<Routine>();
-//        System.out.println("hello");
     }
 
-//    public RoutineCollection(ArrayList<Routine> routineList){
-//        this.collection = routineList;
-//    }
-
-
-//    public ArrayList<Routine> sortNormal() {
-//        return collection;
-//    }
 
     public void sortByAuthor() {
         this.sortedCollection = this.collection;
@@ -38,6 +29,10 @@ public class RoutineCollection {
                 return o1.getRoutineHeader().getAuthor().compareTo(o2.getRoutineHeader().getAuthor());
             }
         });
+    }
+
+    public void filterByRoutineType() {
+        this.sortedCollection = this.collection.stream().filter(p -> p.getType == "Strength").collect(Collectors.toList());
     }
 
     public ArrayList<Routine> getCollection() { return this.collection; }
