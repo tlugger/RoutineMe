@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="<c:url value="resources/css/main.css?name900=246"/>" rel="stylesheet">
+    <link href="<c:url value="resources/css/main.css?nme90=246"/>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
     <title>RoutineMe Login</title>
 </head>
@@ -27,7 +27,9 @@
                 </div>
                 <div class="submit-block">
                     <div></div>
+                    <a href="/routineFeed">
                     <div><input type="submit" value="Submit" class="submitButton"/></div>
+                    </a>
                 </div>
             </div>
             <div style="color: red">${error}</div>

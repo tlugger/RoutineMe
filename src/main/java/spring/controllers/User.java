@@ -10,6 +10,13 @@ public class User {
     private UserActivity activity;
     private UserPresentation presentation;
 
+    public User() {
+
+        this.info = null;
+        this.activity = null;
+        this.presentation = null;
+    }
+
     public void login(String email, String password){ }
     public void signUp(String email, String password) { }
     public void dbValidate(String email, String password) { }
