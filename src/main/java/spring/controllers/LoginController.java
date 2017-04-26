@@ -24,16 +24,15 @@ public class LoginController {
     public String submit(Model model, @ModelAttribute("loginBean") LoginBean login) {
         if (login != null && login.getEmail() != null & login.getPassword() != null) {
             if (login.getEmail().equals("chandra") && login.getPassword().equals("chandra123")) {
-                model.addAttribute("msg", "welcome" + login.getEmail());
+                model.addAttribute("username", login.getEmail());
 
-                System.out.println("l o g i n ");
                 return "redirect:/routineFeed";
             } else {
-                model.addAttribute("error", "Wrong Username or Password");
+                model.addAttribute("error", "Please eneter a valid email address.");
                 return "login";
             }
         } else {
-            model.addAttribute("error", "Please enter Details");
+            model.addAttribute("error", "Please eneter a valid email address.");
             return "login";
         }
     }

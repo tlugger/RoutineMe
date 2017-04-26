@@ -10,6 +10,18 @@ body {
     padding: 0;
 }
 
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header {
+
+}
+
+
 a {
     text-decoration: none;
 }
@@ -58,7 +70,6 @@ p {
 }
 
 .feed {
-    background: #c0c0c8;
     width: 50vw;
 }
 
@@ -93,9 +104,9 @@ input.submitButton:hover {
 }
 
 .viewframe {
-    height: 50vh;
-    background: #fffdfb;
+
     width: 100%;
+    margin-top: 5vh;
 }
 
 .nav-bar-container {
@@ -113,7 +124,8 @@ input.submitButton:hover {
 
 }
 
-.header {
+.routine-header {
+    background: #fffdfb;
     text-align: left;
     font-size: 12px;
     padding: 10px;

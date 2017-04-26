@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="<c:url value="resources/css/main.css?name1asdf0=jo5" />" rel="stylesheet">
+    <link href="<c:url value="resources/css/main.css?namd0=jo5" />" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
     <title>RoutineMe</title>
 </head>
@@ -15,16 +15,20 @@
     <div class="nav-bar-container">
         <div class="nav-bar"></div>
     </div>
+    <div class="header-container">
+        <div class="header">
+            <h1>RoutineMe</h1>
+            <h3>Create, Share, Practice Routines.</h3>
+            <p>Welcome, ${username}</p>
+        </div>
+    </div>
     <div class="feed-container">
         <div class="feed">
-        <h1>RoutineMe</h1>
-        <h3>Create, Share, Practice Routines.</h3>
 
-        <p>Welcome, ${firstName}</p>
         <c:forEach varStatus="loop" items="${routines}" var="routineVar">
+            <div class="viewframe">
             <a href="routine?title=${routineVar.getRoutineHeader().getTitle()}&author=${routineVar.getAuthor()}&date=${routineVar.getDate()}&description=${routineVar.getDescription()}&difficulty=${routineVar.getDifficulty()}&duration=${routineVar.getDuration()}&rating=${routineVar.getRating()}">
-                <div class="viewframe">
-                    <div class="header">
+                    <div class="routine-header">
                         <div class="routine-title">
                             <h1>
                                 ${routineVar.getTitle()}
@@ -65,19 +69,19 @@
                     <div class="routine-image">
                     </div>
             </a>
-            <div class="action-bar">
-                <div class="action-bar-icons">
-                    <div class="vote">
-                        <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
-                        <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
-                    </div>
-                    <div class="start-container">
-                        <img class="start" src="<c:url value="resources/images/start.svg"/>"/>
-                    </div>
-                    <div class="bookmark-container">
-                        <img class="bookmark" src="<c:url value="resources/images/bookmark.svg"/>"/>
-                    </div>
-                    </div>
+                <div class="action-bar">
+                        <div class="action-bar-icons">
+                            <div class="vote">
+                                <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
+                                <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
+                            </div>
+                            <div class="start-container">
+                                <img class="start" src="<c:url value="resources/images/start.svg"/>"/>
+                            </div>
+                            <div class="bookmark-container">
+                                <img class="bookmark" src="<c:url value="resources/images/bookmark.svg"/>"/>
+                            </div>
+                        </div>
                 </div>
                 <div class="reviews">
                     <c:forEach varStatus="loop" items="${routineVar.getReviews().getCollection()}" var="review">
