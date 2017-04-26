@@ -10,6 +10,13 @@ public class Step {
     private boolean completed;
     private String type;
 
+    Step(){
+        this.stepText = "";
+        this.stepImage = "";
+        this.completed = false;
+        this.type = "";
+    }
+
     public String getStepText() {
         return stepText;
     }

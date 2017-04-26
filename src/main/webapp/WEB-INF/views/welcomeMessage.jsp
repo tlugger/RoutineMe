@@ -4,9 +4,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Insert title here</title>
+    <title>RoutineMe</title>
 </head>
 <body>
-<p>Welcome, ${firstName}</p>
+<p>Welcome to RoutineMe</p>
 </body>
 </html>
