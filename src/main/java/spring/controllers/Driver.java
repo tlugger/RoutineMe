@@ -11,18 +11,19 @@ import org.springframework.ui.Model;
 /**
  * Created by Nhi on 4/16/17.
  */
+
 @Controller
 public class Driver {
     public User user;
     public Routine routine;
     public NavigationBar navBar;
 
-//    @RequestMapping(method = RequestMethod.POST)
-//    public String upvote(Model model, @ModelAttribute("routine") Routine routine) {
-//        System.out.println("upvoted!");
-//        routine.upvote();
-//        return "redirect:/routineFeed";
-//    }
+    @RequestMapping(value = "/routine", method = RequestMethod.POST)
+    public String upvote(Model model, @ModelAttribute("routine") Routine routine) {
+        System.out.println("upvoted!");
+        routine.upvote();
+        return "redirect:/routine";
+    }
 
     @RequestMapping(value = "/routineFeed", method = RequestMethod.GET)
     public String init(Model model) {
@@ -41,7 +42,7 @@ public class Driver {
 
         header.setTitle("On The Go");
         header.setAuthor("Jose Canizares");
-        header.setDate("April 24, 2017");
+        header.setDate("2017-02-14");
         header.setDescription("A realistic weightlifting exercise for most ages. Give it a go!");
         this.routine.setRoutineHeader(header);
 
@@ -151,7 +152,7 @@ public class Driver {
 
         header2.setTitle("Weights");
         header2.setAuthor("Adam Heaton");
-        header2.setDate("April 25, 2017");
+        header2.setDate("2017-02-04");
         header2.setDescription("A realistic weightlifting exercise for most ages. Give it a go!");
         routine2.setRoutineHeader(header2);
 

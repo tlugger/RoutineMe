@@ -18,19 +18,10 @@ public class RoutineCollection {
 
     public RoutineCollection() {
         this.collection = new ArrayList<Routine>();
-//        System.out.println("hello");
     }
 
-//    public RoutineCollection(ArrayList<Routine> routineList){
-//        this.collection = routineList;
-//    }
 
-
-//    public ArrayList<Routine> sortNormal() {
-//        return collection;
-//    }
-
-    public void sortByAuthor() {
+    public ArrayList<Routine> sortByAuthor() {
         this.sortedCollection = this.collection;
         Collections.sort(this.sortedCollection, new Comparator<Routine>() {
             public int compare(Routine o1, Routine o2) {
@@ -38,6 +29,49 @@ public class RoutineCollection {
                 return o1.getRoutineHeader().getAuthor().compareTo(o2.getRoutineHeader().getAuthor());
             }
         });
+        return this.sortedCollection;
+    }
+
+    public ArrayList<Routine> sortByTitle() {
+        this.sortedCollection = this.collection;
+        Collections.sort(this.sortedCollection, new Comparator<Routine>() {
+            public int compare(Routine o1, Routine o2) {
+                //Sorts by 'Author' property
+                return o1.getRoutineHeader().getTitle().compareTo(o2.getRoutineHeader().getTitle());
+            }
+        });
+        return this.sortedCollection;
+    }
+
+    public ArrayList<Routine> sortByDate() {
+        this.sortedCollection = this.collection;
+        Collections.sort(this.sortedCollection, new Comparator<Routine>() {
+            public int compare(Routine o1, Routine o2) {
+                //Sorts by 'Author' property
+                return o1.getRoutineHeader().getDate().compareTo(o2.getRoutineHeader().getDate());
+            }
+        });
+        return this.sortedCollection;
+    }
+
+    public ArrayList<Routine> filterByRoutineTypeOnlyMixed() {
+        this.sortedCollection = this.collection;
+        for (Routine oneRoutine : this.collection) {
+            if (oneRoutine.getType().equals("Strength") || oneRoutine.getType().equals("Cardio")) {
+                this.sortedCollection.remove(oneRoutine);
+            }
+        }
+        return this.sortedCollection;
+    }
+
+    public ArrayList<Routine> filterByRoutineTypeOnlyStrength() {
+        this.sortedCollection = this.collection;
+        for (Routine oneRoutine : this.collection) {
+            if (oneRoutine.getType().equals("Mixed") || oneRoutine.getType().equals("Cardio")) {
+                this.sortedCollection.remove(oneRoutine);
+            }
+        }
+        return this.sortedCollection;
     }
 
     public ArrayList<Routine> getCollection() { return this.collection; }
