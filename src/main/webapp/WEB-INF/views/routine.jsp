@@ -54,8 +54,13 @@
             <div class="action-bar">
                 <div class="action-bar-icons">
                     <div class="vote">
-                        <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
+                            <form action="" method="post">
+                                <button type="upvote" name="foo" value="upvote">
+                                    <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
+                                </button>
+                            </form>
                         <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
+                        <div>${routine.getRating()}</div>
                     </div>
                     <div class="start-container">
                         <img class="start" src="<c:url value="resources/images/start.svg"/>"/>
@@ -65,6 +70,8 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="reviews">
                 <c:forEach varStatus="loop" items="${reviews.getCollection()}" var="review">
                     <div class="review">

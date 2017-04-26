@@ -51,6 +51,14 @@ public class Routine {
         return this.data.getDifficulty();
     }
 
+    public void upvote() {
+        this.data.upvote();
+    }
+
+    public void downvote() {
+        this.data.upvote();
+    }
+
 
     public RoutineHeader getRoutineHeader(){return this.header;}
 
@@ -76,4 +84,7 @@ public class Routine {
     public void setExerciseCollection(ExerciseCollection exercises) { this.exercises = exercises; }
 
     public void setReviewCollection(ReviewCollection reviews) { this.reviews = reviews; }
+
+
+
 }

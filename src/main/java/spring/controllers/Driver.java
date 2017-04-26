@@ -17,6 +17,13 @@ public class Driver {
     public Routine routine;
     public NavigationBar navBar;
 
+//    @RequestMapping(method = RequestMethod.POST)
+//    public String upvote(Model model, @ModelAttribute("routine") Routine routine) {
+//        System.out.println("upvoted!");
+//        routine.upvote();
+//        return "redirect:/routineFeed";
+//    }
+
     @RequestMapping(value = "/routineFeed", method = RequestMethod.GET)
     public String init(Model model) {
         model.addAttribute("msg", "Enter your email address to sign in or create an account on RoutineMe");

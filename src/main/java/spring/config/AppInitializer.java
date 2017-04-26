@@ -20,5 +20,4 @@ public class AppInitializer implements WebApplicationInitializer
         servlet.addMapping("/");
 
     }
-
 }

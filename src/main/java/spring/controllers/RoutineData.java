@@ -34,7 +34,7 @@ public class RoutineData {
         this.duration = duration;
     }
 
-    public void upvote(User user){
+    public void upvote(){
         this.rating = this.rating + 1;
 
     }
@@ -42,7 +42,7 @@ public class RoutineData {
         this.rating = this.rating - 1;
 
     }
-    public void start(User user){
+    public void start(){
 
     }
 
