@@ -73,6 +73,30 @@ public class Driver {
         return "routineFeed";
     }
 
+    @RequestMapping(value = "/filterByMixed", method = RequestMethod.POST)
+    public String filterByMixed(Model model) {
+        model.addAttribute("routines", this.routineList.filterByRoutineTypeOnlyMixed());
+        return "routineFeed";
+    }
+
+    @RequestMapping(value = "/filterByStrength", method = RequestMethod.POST)
+    public String filterByStrength(Model model) {
+        model.addAttribute("routines", this.routineList.filterByRoutineTypeOnlyStrength());
+        return "routineFeed";
+    }
+
+    @RequestMapping(value = "/filterByCardio", method = RequestMethod.POST)
+    public String filterByCardio(Model model) {
+        model.addAttribute("routines", this.routineList.filterByRoutineTypeOnlyCardio());
+        return "routineFeed";
+    }
+
+    @RequestMapping(value = "/sortByNoFilter", method = RequestMethod.POST)
+    public String sortByNoFilter(Model model) {
+        model.addAttribute("routines", this.routineList.getCollection());
+        return "routineFeed";
+    }
+
 
     @RequestMapping(value = "/routineFeed", method = RequestMethod.GET)
     public String init(Model model) {

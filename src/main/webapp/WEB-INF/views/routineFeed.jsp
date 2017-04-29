@@ -44,22 +44,29 @@
                 </a>
             </form>
             <form method="POST" action="/RoutineMe/filterByMixed">
-                <a href="sortByDate">
+                <a href="filterByMixed">
                     <button type="sortByDate" name="sortByDate" value="sortByDate" class="sortButton">
                         Filter By Mixed
                     </button>
                 </a>
             </form>
             <form method="POST" action="/RoutineMe/filterByStrength">
-                <a href="sortByDate">
+                <a href="filterByStrength">
                     <button type="filterByStrength" name="filterByStrength" value="filterByStrength" class="sortButton">
                         Filter By Strength
                     </button>
                 </a>
             </form>
             <form method="POST" action="/RoutineMe/filterByCardio">
-                <a href="sortByDate">
+                <a href="filterByCardio">
                     <button type="filterByCardio" name="filterByCardio" value="filterByCardio" class="sortButton">
+                        Filter By Cardio
+                    </button>
+                </a>
+            </form>
+            <form method="POST" action="/RoutineMe/sortByNoFilter">
+                <a href="sortByNoFilter">
+                    <button type="sortByNoFilter" name="sortByNoFilter" value="sortByNoFilter" class="sortByNoFilter">
                         Filter By Cardio
                     </button>
                 </a>
