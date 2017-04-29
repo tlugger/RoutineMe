@@ -53,12 +53,12 @@ public class Routine {
     }
 
     public void upvote() {
-//        System.out.println("What is this?" + this.data);
         this.data.upvote();
     }
 
     public void downvote() {
-        this.data.upvote();
+
+        this.data.downvote();
     }
 
 

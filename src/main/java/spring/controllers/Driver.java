@@ -18,10 +18,19 @@ public class Driver {
     public Routine routine;
     public NavigationBar navBar;
 
-    @RequestMapping(value = "/routine", method = RequestMethod.POST)
-    public String submit(Model model) {
+    @RequestMapping(value = "/upvote", method = RequestMethod.POST)
+    public String upvote(Model model) {
         System.out.println("upvoted!");
         this.routine.upvote();
+        System.out.println(this.routine.getRating());
+        model.addAttribute("routine", this.routine);
+        return "routine";
+    }
+
+    @RequestMapping(value = "/downvote", method = RequestMethod.POST)
+    public String downvote(Model model) {
+        System.out.println("downvoted!");
+        this.routine.downvote();
         System.out.println(this.routine.getRating());
         model.addAttribute("routine", this.routine);
         return "routine";
