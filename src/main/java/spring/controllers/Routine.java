@@ -19,11 +19,12 @@ public class Routine {
     }
 
 
-    public Routine( RoutineHeader header, ExerciseCollection exercises, ReviewCollection reviews, String type){
+    public Routine( RoutineHeader header, ExerciseCollection exercises, ReviewCollection reviews, String type, RoutineData data){
         this.header = header;
         this.exercises = exercises;
         this.reviews = reviews;
         this.type = type;
+        this.data = data;
     }
 
 
@@ -52,6 +53,7 @@ public class Routine {
     }
 
     public void upvote() {
+//        System.out.println("What is this?" + this.data);
         this.data.upvote();
     }
 

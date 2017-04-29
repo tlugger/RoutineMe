@@ -19,16 +19,16 @@ public class Driver {
     public NavigationBar navBar;
 
     @RequestMapping(value = "/routine", method = RequestMethod.POST)
-    public String upvote(Model model, @ModelAttribute("routine") Routine routine) {
+    public String submit(Model model) {
         System.out.println("upvoted!");
-        routine.upvote();
-        return "redirect:/routine";
+        this.routine.upvote();
+        System.out.println(this.routine.getRating());
+        model.addAttribute("routine", this.routine);
+        return "routine";
     }
 
     @RequestMapping(value = "/routineFeed", method = RequestMethod.GET)
     public String init(Model model) {
-        model.addAttribute("msg", "Enter your email address to sign in or create an account on RoutineMe");
-
         List<Routine> list = new ArrayList<Routine>();
 
         User user = new User();
@@ -232,6 +232,8 @@ public class Driver {
 
         model.addAttribute("routines", routineList.getSortedCollection());
 
+        System.out.println(routine2.getDifficulty());
+
         return "routineFeed";
     }
 
@@ -239,12 +241,9 @@ public class Driver {
 
 
     @RequestMapping(value = "/routine", method = RequestMethod.GET)
-    public String goToRoutine(Model model, @RequestParam("title") String title, @RequestParam("author") String author, @RequestParam("description") String description, @RequestParam("date") String date){
-        model.addAttribute("title", title);
-        model.addAttribute("author", author);
-        model.addAttribute("date", date);
-        model.addAttribute("description", description);
-        model.addAttribute("routine", routine);
+    public String goToRoutine(Model model){
+        model.addAttribute("routine", this.routine);
+        System.out.println("going to focus routine.");
         return "routine";
     }
 

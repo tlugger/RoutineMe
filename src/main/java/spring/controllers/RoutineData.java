@@ -10,6 +10,17 @@ public class RoutineData {
     private String difficulty;
     private String duration;
 
+    public RoutineData() {
+
+    }
+
+
+    public RoutineData(int rating, String difficulty, String duration){
+        this.rating = rating;
+        this.difficulty = difficulty;
+        this.duration = duration;
+    }
+
     public int getRating() {
         return rating;
     }

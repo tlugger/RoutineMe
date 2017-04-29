@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="<c:url value="resources/css/main.css?name144=24312346"/>" rel="stylesheet">
+    <link href="<c:url value="resources/css/main.css?name44=24312346"/>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
     <title>RoutineMe Login</title>
 </head>
@@ -16,49 +16,51 @@
             <div class="header">
                 <div class="routine-title">
                     <h1>
-                        ${routine.reviews.getCollection()[0].getAuthor()}
+                        ${routine.getTitle()}
                     </h1>
                 </div>
                 <div class="routine-author">
                     <h3>
-                        ${author}
+                        ${routine.getAuthor()}
                     </h3>
                 </div>
                 <div class="routine-date">
                     <h4>
-                        ${date}
+                        ${routine.getDate()}
                     </h4>
                 </div>
                 <div class="routine-difficulty">
                     <h4>
-                        Difficulty: ${difficulty}
+                        Difficulty: ${routine.getDifficulty()}
                     </h4>
                 </div>
                 <div class="routine-duration">
                     <h4>
-                        Duration: ${duration}
+                        Duration: ${routine.getDuration()}
                     </h4>
                 </div>
                 <div class="routine-rating">
                     <h4>
-                        Rating: ${rating}
+                        Rating: ${routine.getRating()}
                     </h4>
                 </div>
 
                 <div class="routine-description">
                     <p class="routine-review-text">
-                        ${description}
+                        ${routine.getDescription()}
                     </p>
                 </div>
             </div>
             <div class="action-bar">
                 <div class="action-bar-icons">
                     <div class="vote">
-                            <form action="" method="post">
-                                <button type="upvote" name="upvote" value="upvote">
-                                    <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
-                                </button>
-                            </form>
+                        <form method="POST" action="/RoutineMe/routine">
+                            <a href="routine">
+                                <input type="submit" name="upvote" value="upvote">
+                                <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
+                                </input>
+                            </a>
+                        </form>
                         <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
                         <div>${routine.getRating()}</div>
                     </div>

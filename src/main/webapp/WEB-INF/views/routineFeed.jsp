@@ -25,44 +25,44 @@
     <div class="feed-container">
         <div class="feed">
 
-        <c:forEach varStatus="loop" items="${routines}" var="routineVar">
+        <c:forEach varStatus="loop" items="${routines}" var="routine">
             <div class="viewframe">
-            <a href="routine?title=${routineVar.getRoutineHeader().getTitle()}&author=${routineVar.getAuthor()}&date=${routineVar.getDate()}&description=${routineVar.getDescription()}&difficulty=${routineVar.getDifficulty()}&duration=${routineVar.getDuration()}&rating=${routineVar.getRating()}">
+            <a href="routine">
                     <div class="routine-header">
                         <div class="routine-title">
                             <h1>
-                                ${routineVar.getTitle()}
+                                ${routine.getTitle()}
                             </h1>
                         </div>
                         <div class="routine-author">
                             <h3>
-                                ${routineVar.getAuthor()}
+                                ${routine.getAuthor()}
                             </h3>
                         </div>
                         <div class="routine-date">
                             <h4>
-                                ${routineVar.getDate()}
+                                ${routine.getDate()}
                             </h4>
                         </div>
                         <div class="routine-difficulty">
                             <h4>
-                                    Difficulty: ${routineVar.getDifficulty()}
+                                    Difficulty: ${routine.getDifficulty()}
                             </h4>
                         </div>
                         <div class="routine-duration">
                             <h4>
-                                    Duration: ${routineVar.getDuration()}
+                                    Duration: ${routine.getDuration()}
                             </h4>
                         </div>
                         <div class="routine-rating">
                             <h4>
-                                    Rating: ${routineVar.getRating()}
+                                    Rating: ${routine.getRating()}
                             </h4>
                         </div>
 
                         <div class="routine-description">
                             <p class="routine-review-text">
-                                ${routineVar.getDescription()}
+                                ${routine.getDescription()}
                             </p>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                         </div>
                 </div>
                 <div class="reviews">
-                    <c:forEach varStatus="loop" items="${routineVar.getReviews().getCollection()}" var="review">
+                    <c:forEach varStatus="loop" items="${routine.getReviews().getCollection()}" var="review">
                         <div class="review">
                             <h3>${review.getAuthor()}</h3>
                             <h4>${review.getDate()}</h4>

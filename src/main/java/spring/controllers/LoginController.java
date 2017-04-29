@@ -20,7 +20,7 @@ public class LoginController {
 
 
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value= "/login", method = RequestMethod.POST)
     public String submit(Model model, @ModelAttribute("loginBean") LoginBean login) {
         if (login != null && login.getEmail() != null & login.getPassword() != null) {
             if (login.getEmail().equals("chandra") && login.getPassword().equals("chandra123")) {
@@ -28,11 +28,11 @@ public class LoginController {
 
                 return "redirect:/routineFeed";
             } else {
-                model.addAttribute("error", "Please eneter a valid email address.");
+                model.addAttribute("error", "Please enter a valid email address.");
                 return "login";
             }
         } else {
-            model.addAttribute("error", "Please eneter a valid email address.");
+            model.addAttribute("error", "Please enter a valid email address.");
             return "login";
         }
     }
