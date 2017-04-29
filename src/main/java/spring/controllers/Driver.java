@@ -39,13 +39,22 @@ public class Driver {
 
     @RequestMapping(value = "/sortByAuthor", method = RequestMethod.POST)
     public String sortByAuthor(Model model) {
-        System.out.println("Before Sorted By Author!");
-        this.routineList.sortByAuthor();
-        System.out.println("After Sorted By Author!");
-        model.addAttribute("routines", this.routineList.getCollection());
-        System.out.println("After add attribute!");
+        model.addAttribute("routines", this.routineList.sortByAuthor());
         return "routineFeed";
     }
+
+    @RequestMapping(value = "/sortByTitle", method = RequestMethod.POST)
+    public String sortByTitle(Model model) {
+        model.addAttribute("routines", this.routineList.sortByTitle());
+        return "routineFeed";
+    }
+
+    @RequestMapping(value = "/sortByDate", method = RequestMethod.POST)
+    public String sortByDate(Model model) {
+        model.addAttribute("routines", this.routineList.sortByDate());
+        return "routineFeed";
+    }
+
 
     @RequestMapping(value = "/routineFeed", method = RequestMethod.GET)
     public String init(Model model) {
@@ -60,7 +69,7 @@ public class Driver {
         ExerciseCollection exercises = new ExerciseCollection();
         ReviewCollection reviews = new ReviewCollection();
 
-        header.setTitle("On The Go");
+        header.setTitle("ZOn The Go");
         header.setAuthor("Jose Canizares");
         header.setDate("2017-02-14");
         header.setDescription("A realistic weightlifting exercise for most ages. Give it a go!");
