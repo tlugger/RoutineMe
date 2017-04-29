@@ -39,19 +39,21 @@ public class Driver {
 
     @RequestMapping(value = "/sortByAuthor", method = RequestMethod.POST)
     public String sortByAuthor(Model model) {
-        System.out.println("Sorted By Author!");
-        routineList.sortByAuthor();
-        model.addAttribute("routines", routineList);
+        System.out.println("Before Sorted By Author!");
+        this.routineList.sortByAuthor();
+        System.out.println("After Sorted By Author!");
+        model.addAttribute("routines", this.routineList.getCollection());
+        System.out.println("After add attribute!");
         return "routineFeed";
     }
 
     @RequestMapping(value = "/routineFeed", method = RequestMethod.GET)
     public String init(Model model) {
-        List<Routine> list = new ArrayList<Routine>();
 
+        this.routineList = new RoutineCollection();
         User user = new User();
 
-        routine = new Routine();
+        this.routine = new Routine();
 
         RoutineHeader header = new RoutineHeader();
         RoutineData data = new RoutineData();
@@ -242,13 +244,13 @@ public class Driver {
         routine2.setExerciseCollection(exercises);
 
         //RoutineCollection routineList = new RoutineCollection();
-        routineList.addRoutine(routine);
-        routineList.addRoutine(routine2);
+        this.routineList.addRoutine(this.routine);
+        this.routineList.addRoutine(routine2);
         //routineList.addRoutine(routine3);
         //routineList.addRoutine(routine4);
         //routineList.sortByAuthor();
 
-        model.addAttribute("routines", routineList.getCollection());
+        model.addAttribute("routines", this.routineList.getCollection());
 
         System.out.println(routine2.getDifficulty());
 
