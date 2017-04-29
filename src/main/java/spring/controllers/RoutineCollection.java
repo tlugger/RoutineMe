@@ -13,6 +13,15 @@ import java.util.List;
 @Controller
 public class RoutineCollection {
     public ArrayList<Routine> collection;
+
+    public void setCollection(ArrayList<Routine> collection) {
+        this.collection = collection;
+    }
+
+    public void setSortedCollection(ArrayList<Routine> sortedCollection) {
+        this.sortedCollection = sortedCollection;
+    }
+
     public ArrayList<Routine> sortedCollection;
 
 
@@ -48,7 +57,7 @@ public class RoutineCollection {
         Collections.sort(this.sortedCollection, new Comparator<Routine>() {
             public int compare(Routine o1, Routine o2) {
                 //Sorts by 'Author' property
-                return o1.getRoutineHeader().getDate().compareTo(o2.getRoutineHeader().getDate());
+                return -1*(o1.getRoutineHeader().getDate().compareTo(o2.getRoutineHeader().getDate()));
             }
         });
         return this.sortedCollection;

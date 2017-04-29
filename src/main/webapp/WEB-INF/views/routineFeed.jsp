@@ -16,22 +16,43 @@
         <div class="nav-bar">
             <form method="POST" action="/RoutineMe/sortByAuthor">
                 <a href="sortByAuthor">
-                    <button type="sortByAuthor" name="sortByAuthor" value="sortByAuthor">
+                    <button type="sortByAuthor" name="sortByAuthor" value="sortByAuthor" class="sortButton">
                         Author
                     </button>
                 </a>
             </form>
             <form method="POST" action="/RoutineMe/sortByTitle">
                 <a href="sortByTitle">
-                    <button type="sortByTitle" name="sortByTitle" value="sortByTitle">
-                        Title
+                    <button type="sortByTitle" name="sortByTitle" value="sortByTitle" class="sortButton">
+                        Title A->Z
                     </button>
                 </a>
             </form>
             <form method="POST" action="/RoutineMe/sortByDate">
                 <a href="sortByDate">
-                    <button type="sortByDate" name="sortByDate" value="sortByDate">
+                    <button type="sortByDate" name="sortByDate" value="sortByDate" class="sortButton">
                         Newest First
+                    </button>
+                </a>
+            </form>
+            <form method="POST" action="/RoutineMe/filterByMixed">
+                <a href="sortByDate">
+                    <button type="sortByDate" name="sortByDate" value="sortByDate" class="sortButton">
+                        Filter By Mixed
+                    </button>
+                </a>
+            </form>
+            <form method="POST" action="/RoutineMe/filterByStrength">
+                <a href="sortByDate">
+                    <button type="filterByStrength" name="filterByStrength" value="filterByStrength" class="sortButton">
+                        Filter By Strength
+                    </button>
+                </a>
+            </form>
+            <form method="POST" action="/RoutineMe/filterByCardio">
+                <a href="sortByDate">
+                    <button type="filterByCardio" name="filterByCardio" value="filterByCardio" class="sortButton">
+                        Filter By Cardio
                     </button>
                 </a>
             </form>
