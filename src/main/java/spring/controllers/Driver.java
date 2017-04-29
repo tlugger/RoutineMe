@@ -17,10 +17,11 @@ public class Driver {
     public User user;
     public Routine routine;
     public NavigationBar navBar;
-    public RoutineHeader rH;
+    public RoutineCollection routineList;
 
-    @RequestMapping(value = "/routine", method = RequestMethod.POST)
-    public String submit(Model model) {
+
+    @RequestMapping(value = "/upvote", method = RequestMethod.POST)
+    public String upvote(Model model) {
         System.out.println("upvoted!");
         this.routine.upvote();
         System.out.println(this.routine.getRating());
@@ -45,20 +46,48 @@ public class Driver {
         return "draftTest";
     }
 
+    @RequestMapping(value = "/downvote", method = RequestMethod.POST)
+    public String downvote(Model model) {
+        System.out.println("downvoted!");
+        this.routine.downvote();
+        System.out.println(this.routine.getRating());
+        model.addAttribute("routine", this.routine);
+        return "routine";
+    }
+
+    @RequestMapping(value = "/sortByAuthor", method = RequestMethod.POST)
+    public String sortByAuthor(Model model) {
+        model.addAttribute("routines", this.routineList.sortByAuthor());
+        return "routineFeed";
+    }
+
+    @RequestMapping(value = "/sortByTitle", method = RequestMethod.POST)
+    public String sortByTitle(Model model) {
+        model.addAttribute("routines", this.routineList.sortByTitle());
+        return "routineFeed";
+    }
+
+    @RequestMapping(value = "/sortByDate", method = RequestMethod.POST)
+    public String sortByDate(Model model) {
+        model.addAttribute("routines", this.routineList.sortByDate());
+        return "routineFeed";
+    }
+
+
     @RequestMapping(value = "/routineFeed", method = RequestMethod.GET)
     public String init(Model model) {
-        List<Routine> list = new ArrayList<Routine>();
 
+        this.routineList = new RoutineCollection();
         User user = new User();
 
-        routine = new Routine();
+        this.routine = new Routine();
 
         RoutineHeader header = new RoutineHeader();
         RoutineData data = new RoutineData();
         ExerciseCollection exercises = new ExerciseCollection();
         ReviewCollection reviews = new ReviewCollection();
 
-        header.setTitle("On The Go");
+        header.setTitle("ZOn The Go");
         header.setAuthor("Jose Canizares");
         header.setDate("2017-02-14");
         header.setDescription("A realistic weightlifting exercise for most ages. Give it a go!");
@@ -241,14 +270,14 @@ public class Driver {
 
         routine2.setExerciseCollection(exercises);
 
-        RoutineCollection routineList = new RoutineCollection();
-        routineList.addRoutine(routine);
-        routineList.addRoutine(routine2);
+        //RoutineCollection routineList = new RoutineCollection();
+        this.routineList.addRoutine(this.routine);
+        this.routineList.addRoutine(routine2);
         //routineList.addRoutine(routine3);
         //routineList.addRoutine(routine4);
-        routineList.sortByAuthor();
+        //routineList.sortByAuthor();
 
-        model.addAttribute("routines", routineList.getSortedCollection());
+        model.addAttribute("routines", this.routineList.getCollection());
 
         System.out.println(routine2.getDifficulty());
 

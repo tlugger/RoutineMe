@@ -54,14 +54,20 @@
             <div class="action-bar">
                 <div class="action-bar-icons">
                     <div class="vote">
-                        <form method="POST" action="/RoutineMe/routine">
-                            <a href="routine">
-                                <input type="submit" name="upvote" value="upvote">
+                        <form method="POST" action="/RoutineMe/upvote">
+                            <a href="upvote">
+                                <button type="upvote" name="upvote" value="upvote">
                                 <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
-                                </input>
+                                </button>
                             </a>
                         </form>
-                        <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
+                        <form method="POST" action="/RoutineMe/downvote">
+                            <a href="downvote">
+                                <button type="downvote" name="downvote" value="downvote">
+                                    <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
+                                </button>
+                            </a>
+                        </form>
                         <div>${routine.getRating()}</div>
                     </div>
                     <div class="start-container">

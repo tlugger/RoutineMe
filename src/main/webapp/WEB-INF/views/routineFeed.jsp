@@ -21,7 +21,29 @@
 <body>
 <div class="wrapper">
     <div class="nav-bar-container">
-        <div class="nav-bar"></div>
+        <div class="nav-bar">
+            <form method="POST" action="/RoutineMe/sortByAuthor">
+                <a href="sortByAuthor">
+                    <button type="sortByAuthor" name="sortByAuthor" value="sortByAuthor">
+                        Author
+                    </button>
+                </a>
+            </form>
+            <form method="POST" action="/RoutineMe/sortByTitle">
+                <a href="sortByTitle">
+                    <button type="sortByTitle" name="sortByTitle" value="sortByTitle">
+                        Title
+                    </button>
+                </a>
+            </form>
+            <form method="POST" action="/RoutineMe/sortByDate">
+                <a href="sortByDate">
+                    <button type="sortByDate" name="sortByDate" value="sortByDate">
+                        Newest First
+                    </button>
+                </a>
+            </form>
+        </div>
     </div>
     <div class="header-container">
         <div class="header">
