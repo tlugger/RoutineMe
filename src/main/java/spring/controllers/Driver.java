@@ -17,6 +17,7 @@ public class Driver {
     public User user;
     public Routine routine;
     public NavigationBar navBar;
+    public RoutineHeader rH;
 
     @RequestMapping(value = "/routine", method = RequestMethod.POST)
     public String submit(Model model) {
@@ -25,6 +26,23 @@ public class Driver {
         System.out.println(this.routine.getRating());
         model.addAttribute("routine", this.routine);
         return "routine";
+    }
+    @RequestMapping(value = "/draft", method = RequestMethod.GET)
+    public String getDraft(Model model) {
+        System.out.println("upvoted!");
+        //this.routine.setTitle("Nhi's Workout");
+        System.out.println(this.routine.getTitle());
+        Routine routine = new Routine();
+        model.addAttribute("routine", routine);
+        return "draft";
+    }
+
+    @RequestMapping(value = "/draftTest", method = RequestMethod.GET)
+    public String submitDraft(Model model, @ModelAttribute("title") String title) {
+        System.out.println("title is" + title);
+        this.routine.setTitle(title);
+        model.addAttribute("title", title);
+        return "draftTest";
     }
 
     @RequestMapping(value = "/routineFeed", method = RequestMethod.GET)

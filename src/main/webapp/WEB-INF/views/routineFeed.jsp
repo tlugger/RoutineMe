@@ -10,6 +10,14 @@
     <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
     <title>RoutineMe</title>
 </head>
+<nav>
+    <ul>
+        <button type="submitDraft" name="submitDraft" value="submitDraft">
+        <a href="/RoutineMe/draft">Create Draft</a>
+        </button>
+
+    </ul>
+</nav>
 <body>
 <div class="wrapper">
     <div class="nav-bar-container">
