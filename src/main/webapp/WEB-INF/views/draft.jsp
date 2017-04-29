@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="draft-container">
-    <form:form name="submitForm" method="POST">
+    <form:form name="submitForm" action="/RoutineMe/draftTest" method="POST">
         <div align="center">
             <%--<h1>RoutineMe</h1>--%>
             <%--<h3>Create, Share, Practice Routines.</h3>--%>
@@ -21,8 +21,10 @@
                 <div class="header-block">
                     <div class = "draft-title">
                         <h4 class="routine-title">Title</h4>
+                        <%--<div>${routine.setTitle(<input type="text" name="title" class="field"/>)}</div>--%>
                         <div><input type="text" name="title" class="field"/></div>
-                    </div>
+
+                </div>
                     <div class = "draft-author">
                         <h4 class="routine-author">Author</h4>
                         <div><input type="text" name="author" class="field"/></div>
@@ -40,15 +42,23 @@
                         <div><input type="text" name="duration" class="field"/></div>
                     </div>
                     <div class = "draft-description">
-                        <h4 class="routine-description">Duration</h4>
-                        <div><input type="text" name="duration" class="field"/></div>
+                        <h4 class="routine-description">Description</h4>
+                        <div><input type="text" name="description" class="field"/></div>
+                    </div>
+                    <div class = "draft-description">
+                        <h4 class="routine-description">Review</h4>
+                        <div><input type="text" name="reviewText" class="field"/></div>
+                    </div>
+                    <div class = "draft-description">
+                        <h4 class="routine-description">Rating</h4>
+                        <div><input type="text" name="rating" class="field"/></div>
                     </div>
                 </div>
                 <div class="submit-block">
                     <div></div>
-                    <a href="/routineFeed">
-                        <div><input type="submit" value="Submit" class="submitButton"/></div>
-                    </a>
+                    <a href="/RoutineMe/draftTest">
+                        <div><input type="submitDraft" value="Submit" class="submitButton"/></div>
+                </a>
                 </div>
             </div>
             <div style="color: red">${error}</div>

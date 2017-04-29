@@ -87,6 +87,17 @@ public class Routine {
 
     public void setReviewCollection(ReviewCollection reviews) { this.reviews = reviews; }
 
-
+    public void setTitle(String title) {
+        this.header.setTitle(title);
+    }
+    public void setAuthor(String author) {
+        this.header.setAuthor(author);
+    }
+    public void setDate(String date){
+        this.header.setDate(date);
+    }
+    public void setDescription(String description) {
+        this.header.setDescription(description);
+    }
 
 }
