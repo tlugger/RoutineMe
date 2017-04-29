@@ -17,6 +17,7 @@ public class Driver {
     public User user;
     public Routine routine;
     public NavigationBar navBar;
+    public RoutineCollection routineList;
 
     @RequestMapping(value = "/upvote", method = RequestMethod.POST)
     public String upvote(Model model) {
@@ -34,6 +35,14 @@ public class Driver {
         System.out.println(this.routine.getRating());
         model.addAttribute("routine", this.routine);
         return "routine";
+    }
+
+    @RequestMapping(value = "/sortByAuthor", method = RequestMethod.POST)
+    public String sortByAuthor(Model model) {
+        System.out.println("Sorted By Author!");
+        routineList.sortByAuthor();
+        model.addAttribute("routines", routineList);
+        return "routineFeed";
     }
 
     @RequestMapping(value = "/routineFeed", method = RequestMethod.GET)
@@ -232,14 +241,14 @@ public class Driver {
 
         routine2.setExerciseCollection(exercises);
 
-        RoutineCollection routineList = new RoutineCollection();
+        //RoutineCollection routineList = new RoutineCollection();
         routineList.addRoutine(routine);
         routineList.addRoutine(routine2);
         //routineList.addRoutine(routine3);
         //routineList.addRoutine(routine4);
-        routineList.sortByAuthor();
+        //routineList.sortByAuthor();
 
-        model.addAttribute("routines", routineList.getSortedCollection());
+        model.addAttribute("routines", routineList.getCollection());
 
         System.out.println(routine2.getDifficulty());
 
