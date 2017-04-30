@@ -2,11 +2,16 @@ package spring.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RequestMethod;import java.util.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.servlet.ModelAndView;
+import java.util.UUID;
+import java.lang.reflect.*;
 
 /**
  * Created by Nhi on 4/16/17.
@@ -17,7 +22,7 @@ public class Driver {
     public User user;
     public Routine routine;
     public NavigationBar navBar;
-    public RoutineCollection routineList;
+    public RoutineCollection routineList = new RoutineCollection();
 
 
     @RequestMapping(value = "/upvote", method = RequestMethod.POST)
@@ -28,7 +33,7 @@ public class Driver {
         model.addAttribute("routine", this.routine);
         return "routine";
     }
-    @RequestMapping(value = "/draft", method = RequestMethod.GET)
+    @RequestMapping(value = "/goToDraft", method = RequestMethod.GET)
     public String getDraft(Model model) {
         System.out.println("upvoted!");
         //this.routine.setTitle("Nhi's Workout");
@@ -38,13 +43,71 @@ public class Driver {
         return "draft";
     }
 
-    @RequestMapping(value = "/draftTest", method = RequestMethod.GET)
-    public String submitDraft(Model model, @ModelAttribute("title") String title) {
-        System.out.println("title is" + title);
-        this.routine.setTitle(title);
-        model.addAttribute("title", title);
-        return "draftTest";
+//    @RequestMapping(value = "/draftTest", method = RequestMethod.POST)
+//    public String submitDraft(Model model, @RequestParam("title") String title) {
+//        System.out.println("title is" + title);
+//        this.routine.setTitle(title);
+//        model.addAttribute("title", title);
+//        return "draftTest";
+//    }
+//
+//
+//    @RequestMapping(value="/draftTest", method=RequestMethod.GET)
+//    public String submitDraft(Model model, @PathVariable("routineHeader") String routineHeader) {
+//        System.out.println("title is" + routine.getTitle());
+//        this.routine.setTitle(routine.getTitle());
+//        model.addAttribute("title", routine.getTitle());
+//        return "draftTest";
+//    }
+
+    @RequestMapping(value="/draft", method = RequestMethod.GET)
+    public String initDraft(Model model) {
+        model.addAttribute("msg", "Enter your");
+        return "draft";
     }
+
+
+    @RequestMapping(value="/draft", method = RequestMethod.POST)
+    public String submit(@ModelAttribute("draftBean") DraftBean draft) {
+        System.out.println("title is: " + draft.getTitle());
+
+//        RoutineHeader param1;
+//        ExerciseCollection param2;
+//        ReviewCollection param3;
+//        String param4;
+//        RoutineData param5;
+//        String className = "spring.controllers.Routine";
+//        Class cl = Class.forName("spring.controllers.Routine");
+//        Constructor con = cl.getConstructor(RoutineHeader.class, ExerciseCollection.class, ReviewCollection.class, String.class, RoutineData.class);
+//        Object xyz = con.newInstance(param1, param2, param3, param4, param5);
+//
+//
+//        Routine myInstance = Class.forName("myClass").newInstance();
+//        UUID routineID = UUID.randomUUID();
+//        routineID = Routine.newInstance()
+
+
+        Routine draftedRoutine = new Routine();
+        RoutineHeader draftedHeader = new RoutineHeader();
+        RoutineData draftedData = new RoutineData();
+
+        draftedRoutine.setRoutineHeader(draftedHeader);
+
+        draftedRoutine.setAuthor(draft.getAuthor());
+        draftedRoutine.setTitle(draft.getTitle());
+        draftedRoutine.setDescription(draft.getDescription());
+        draftedData.setDifficulty(draft.getDifficulty());
+        draftedData.setDuration(draft.getDuration());
+        //draftedRoutine.setDate(dateGenerator);
+
+        draftedRoutine.setData(draftedData);
+
+        this.routineList.addRoutine(draftedRoutine);
+
+        return "redirect:/routineFeed";
+
+    }
+
 
     @RequestMapping(value = "/downvote", method = RequestMethod.POST)
     public String downvote(Model model) {
@@ -58,50 +121,52 @@ public class Driver {
     @RequestMapping(value = "/sortByAuthor", method = RequestMethod.POST)
     public String sortByAuthor(Model model) {
         model.addAttribute("routines", this.routineList.sortByAuthor());
-        return "routineFeed";
+        return "redirect:/routineFeed";
     }
 
     @RequestMapping(value = "/sortByTitle", method = RequestMethod.POST)
     public String sortByTitle(Model model) {
         model.addAttribute("routines", this.routineList.sortByTitle());
-        return "routineFeed";
+        return "redirect:/routineFeed";
     }
 
     @RequestMapping(value = "/sortByDate", method = RequestMethod.POST)
     public String sortByDate(Model model) {
         model.addAttribute("routines", this.routineList.sortByDate());
-        return "routineFeed";
+        return "redirect:/routineFeed";
     }
 
     @RequestMapping(value = "/filterByMixed", method = RequestMethod.POST)
     public String filterByMixed(Model model) {
         model.addAttribute("routines", this.routineList.filterByRoutineTypeOnlyMixed());
-        return "routineFeed";
+        return "redirect:/routineFeed";
     }
 
     @RequestMapping(value = "/filterByStrength", method = RequestMethod.POST)
     public String filterByStrength(Model model) {
         model.addAttribute("routines", this.routineList.filterByRoutineTypeOnlyStrength());
-        return "routineFeed";
+        return "redirect:/routineFeed";
     }
 
     @RequestMapping(value = "/filterByCardio", method = RequestMethod.POST)
     public String filterByCardio(Model model) {
         model.addAttribute("routines", this.routineList.filterByRoutineTypeOnlyCardio());
-        return "routineFeed";
+        return "redirect:/routineFeed";
     }
 
     @RequestMapping(value = "/sortByNoFilter", method = RequestMethod.POST)
     public String sortByNoFilter(Model model) {
         model.addAttribute("routines", this.routineList.getCollection());
-        return "routineFeed";
+        return "redirect:/routineFeed";
     }
 
 
-    @RequestMapping(value = "/routineFeed", method = RequestMethod.GET)
+    @RequestMapping(value = "/routineFeed", method = {RequestMethod.GET, RequestMethod.POST})
     public String init(Model model) {
 
-        this.routineList = new RoutineCollection();
+
+
+        //this.routineList = new RoutineCollection();
         User user = new User();
 
         this.routine = new Routine();
@@ -295,15 +360,15 @@ public class Driver {
         routine2.setExerciseCollection(exercises);
 
         //RoutineCollection routineList = new RoutineCollection();
-        this.routineList.addRoutine(this.routine);
-        this.routineList.addRoutine(routine2);
+        //this.routineList.addRoutine(this.routine);
+        //this.routineList.addRoutine(routine2);
         //routineList.addRoutine(routine3);
         //routineList.addRoutine(routine4);
         //routineList.sortByAuthor();
 
         model.addAttribute("routines", this.routineList.getCollection());
 
-        System.out.println(routine2.getDifficulty());
+        //System.out.println(routine2.getDifficulty());
 
         return "routineFeed";
     }

@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="draft-container">
-    <form:form name="submitForm" action="/RoutineMe/draftTest" method="POST">
+    <form:form name="submitForm" method="POST">
         <div align="center">
             <%--<h1>RoutineMe</h1>--%>
             <%--<h3>Create, Share, Practice Routines.</h3>--%>
@@ -56,8 +56,8 @@
                 </div>
                 <div class="submit-block">
                     <div></div>
-                    <a href="/RoutineMe/draftTest">
-                        <div><input type="submitDraft" value="Submit" class="submitButton"/></div>
+                    <a href="/routineFeed">
+                        <div><input type="submit" value="Submit" class="submitButton"/></div>
                 </a>
                 </div>
             </div>

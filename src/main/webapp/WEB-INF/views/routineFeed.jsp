@@ -12,7 +12,7 @@
 </head>
 <nav>
     <ul>
-        <button type="submitDraft" name="submitDraft" value="submitDraft">
+        <button type="goToDraft" name="goToDraft" value="goToDraft">
         <a href="/RoutineMe/draft">Create Draft</a>
         </button>
 

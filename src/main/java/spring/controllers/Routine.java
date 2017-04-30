@@ -9,6 +9,11 @@ public class Routine {
     private ExerciseCollection exercises;
     private ReviewCollection reviews;
     private RoutineData data;
+    private String title;
+    private String author;
+    private String date;
+    private String description;
+
 
     public Routine() {
         this.header = null;
@@ -30,8 +35,11 @@ public class Routine {
 
     //wrappers
     public String getTitle() {
+        System.out.println("getting title");
         return this.header.getTitle();
     }
+
+
     public String getAuthor() {
         return this.header.getAuthor();
     }
