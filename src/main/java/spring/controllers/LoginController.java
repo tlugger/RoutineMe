@@ -23,7 +23,7 @@ public class LoginController {
     @RequestMapping(value= "/login", method = RequestMethod.POST)
     public String submit(Model model, @ModelAttribute("loginBean") LoginBean login) {
         if (login != null && login.getEmail() != null & login.getPassword() != null) {
-            if (login.getEmail().equals("chandra") && login.getPassword().equals("chandra123")) {
+            if (login.getEmail().equals("Tyler") && login.getPassword().equals("chandra123")) {
                 model.addAttribute("username", login.getEmail());
 
                 return "redirect:/routineFeed";
