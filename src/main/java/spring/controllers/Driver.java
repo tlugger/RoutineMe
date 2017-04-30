@@ -138,19 +138,19 @@ public class Driver {
 
     @RequestMapping(value = "/filterByMixed", method = RequestMethod.POST)
     public String filterByMixed(Model model) {
-        model.addAttribute("routines", this.routineList.filterByRoutineTypeOnlyMixed());
+        model.addAttribute("routines", this.routineList.sortByDate());
         return "redirect:/routineFeed";
     }
 
     @RequestMapping(value = "/filterByStrength", method = RequestMethod.POST)
     public String filterByStrength(Model model) {
-        model.addAttribute("routines", this.routineList.filterByRoutineTypeOnlyStrength());
+        model.addAttribute("routines", this.routineList.sortByDate());
         return "redirect:/routineFeed";
     }
 
     @RequestMapping(value = "/filterByCardio", method = RequestMethod.POST)
     public String filterByCardio(Model model) {
-        model.addAttribute("routines", this.routineList.filterByRoutineTypeOnlyCardio());
+        model.addAttribute("routines", this.routineList.sortByDate());
         return "redirect:/routineFeed";
     }
 

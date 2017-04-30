@@ -56,13 +56,13 @@
                     </button>
                 </a>
             </form>
-            <form method="POST" action="/RoutineMe/sortByNoFilter">
-                <a href="sortByNoFilter">
-                    <button type="sortByNoFilter" name="sortByNoFilter" value="sortByNoFilter" class="sortButton">
-                        Filter By Cardio
-                    </button>
-                </a>
-            </form>
+            <%--<form method="POST" action="/RoutineMe/sortByNoFilter">--%>
+                <%--<a href="sortByNoFilter">--%>
+                    <%--<button type="sortByNoFilter" name="sortByNoFilter" value="sortByNoFilter" class="sortButton">--%>
+                        <%--Filter By Cardio--%>
+                    <%--</button>--%>
+                <%--</a>--%>
+            <%--</form>--%>
         </div>
     </div>
     <div class="header-container">
