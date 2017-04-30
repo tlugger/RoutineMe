@@ -14,6 +14,7 @@
     <div align="center">
         <div class="viewframe">
             <div class="header">
+                <a href="routineFeed">Back</a>
                 <div class="routine-title">
                     <h1>
                         ${routine.getTitle()}

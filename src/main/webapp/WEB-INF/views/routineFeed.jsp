@@ -6,18 +6,10 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="<c:url value="resources/css/main.css?namd0=jo5" />" rel="stylesheet">
+    <link href="<c:url value="resources/css/main.css?nkg=jo5" />" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
     <title>RoutineMe</title>
 </head>
-<nav>
-    <ul>
-        <button type="goToDraft" name="goToDraft" value="goToDraft">
-        <a href="/RoutineMe/draft">Create Draft</a>
-        </button>
-
-    </ul>
-</nav>
 <body>
 <div class="wrapper">
     <div class="nav-bar-container">
@@ -66,7 +58,7 @@
             </form>
             <form method="POST" action="/RoutineMe/sortByNoFilter">
                 <a href="sortByNoFilter">
-                    <button type="sortByNoFilter" name="sortByNoFilter" value="sortByNoFilter" class="sortByNoFilter">
+                    <button type="sortByNoFilter" name="sortByNoFilter" value="sortByNoFilter" class="sortButton">
                         Filter By Cardio
                     </button>
                 </a>
@@ -78,6 +70,9 @@
             <h1>RoutineMe</h1>
             <h3>Create, Share, Practice Routines.</h3>
             <p>Welcome, ${username}</p>
+            <button type="goToDraft" name="goToDraft" value="goToDraft" class="create-draft-button">
+                <a href="/RoutineMe/draft">Create Draft</a>
+            </button>
         </div>
     </div>
     <div class="feed-container">

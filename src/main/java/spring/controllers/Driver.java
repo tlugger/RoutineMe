@@ -28,9 +28,9 @@ public class Driver {
     @RequestMapping(value = "/upvote", method = RequestMethod.POST)
     public String upvote(Model model) {
         System.out.println("upvoted!");
-        this.routine.upvote();
+        this.routineList.getCollection().get(0).upvote();
         System.out.println(this.routine.getRating());
-        model.addAttribute("routine", this.routine);
+        model.addAttribute("routine", this.routineList.getCollection().get(0));
         return "routine";
     }
     @RequestMapping(value = "/goToDraft", method = RequestMethod.GET)
@@ -112,9 +112,9 @@ public class Driver {
     @RequestMapping(value = "/downvote", method = RequestMethod.POST)
     public String downvote(Model model) {
         System.out.println("downvoted!");
-        this.routine.downvote();
+        this.routineList.getCollection().get(0).downvote();
         System.out.println(this.routine.getRating());
-        model.addAttribute("routine", this.routine);
+        model.addAttribute("routine", this.routineList.getCollection().get(0));
         return "routine";
     }
 
@@ -360,7 +360,7 @@ public class Driver {
         routine2.setExerciseCollection(exercises);
 
         //RoutineCollection routineList = new RoutineCollection();
-        //this.routineList.addRoutine(this.routine);
+//        this.routineList.addRoutine(this.routine);
         //this.routineList.addRoutine(routine2);
         //routineList.addRoutine(routine3);
         //routineList.addRoutine(routine4);
@@ -378,7 +378,7 @@ public class Driver {
 
     @RequestMapping(value = "/routine", method = RequestMethod.GET)
     public String goToRoutine(Model model){
-        model.addAttribute("routine", this.routine);
+        model.addAttribute("routine", this.routineList.getCollection().get(0));
         System.out.println("going to focus routine.");
         return "routine";
     }

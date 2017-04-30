@@ -104,8 +104,7 @@ input.submitButton:hover {
 }
 
 .viewframe {
-
-    width: 100%;
+    width: 50vw;
     margin-top: 5vh;
 }
 
