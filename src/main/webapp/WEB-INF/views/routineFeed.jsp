@@ -6,81 +6,166 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="<c:url value="resources/css/main.css?name1asdf0=jo5" />" rel="stylesheet">
+    <link href="<c:url value="resources/css/main.css?fn=joasdf5" />" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
     <title>RoutineMe</title>
 </head>
 <body>
 <div class="wrapper">
     <div class="nav-bar-container">
-        <div class="nav-bar"></div>
+        <div class="nav-bar">
+            <form method="POST" action="/RoutineMe/sortByAuthor">
+                <a href="sortByAuthor">
+                    <button type="sortByAuthor" name="sortByAuthor" value="sortByAuthor" class="sortButton">
+                        Author
+                    </button>
+                </a>
+            </form>
+            <form method="POST" action="/RoutineMe/sortByTitle">
+                <a href="sortByTitle">
+                    <button type="sortByTitle" name="sortByTitle" value="sortByTitle" class="sortButton">
+                        Title A->Z
+                    </button>
+                </a>
+            </form>
+            <form method="POST" action="/RoutineMe/sortByDate">
+                <a href="sortByDate">
+                    <button type="sortByDate" name="sortByDate" value="sortByDate" class="sortButton">
+                        Newest First
+                    </button>
+                </a>
+            </form>
+            <form method="POST" action="/RoutineMe/filterByMixed">
+                <a href="filterByMixed">
+                    <button type="sortByDate" name="sortByDate" value="sortByDate" class="sortButton">
+                        Filter By Mixed
+                    </button>
+                </a>
+            </form>
+            <form method="POST" action="/RoutineMe/filterByStrength">
+                <a href="filterByStrength">
+                    <button type="filterByStrength" name="filterByStrength" value="filterByStrength" class="sortButton">
+                        Filter By Strength
+                    </button>
+                </a>
+            </form>
+            <form method="POST" action="/RoutineMe/filterByCardio">
+                <a href="filterByCardio">
+                    <button type="filterByCardio" name="filterByCardio" value="filterByCardio" class="sortButton">
+                        Filter By Cardio
+                    </button>
+                </a>
+            </form>
+            <form method="POST" action="/RoutineMe/routineFeed">
+                <a href="routineFeed">
+                    <button type="filterByCardio" name="filterByCardio" value="filterByCardio" class="sortButton">
+                        <img class="profile-pic" src="<c:url value="resources/images/profile.svg"/>"/>
+                    </button>
+                </a>
+            </form>
+                <a href="/RoutineMe/login">
+                    <button type="filterByCardio" name="filterByCardio" value="filterByCardio" class="sortButton">
+                        Logout
+                    </button>
+                </a>
+
+
+            <%--<form method="POST" action="/RoutineMe/sortByNoFilter">--%>
+                <%--<a href="sortByNoFilter">--%>
+                    <%--<button type="sortByNoFilter" name="sortByNoFilter" value="sortByNoFilter" class="sortButton">--%>
+                        <%--Filter By Cardio--%>
+                    <%--</button>--%>
+                <%--</a>--%>
+            <%--</form>--%>
+        </div>
+    </div>
+    <div class="header-container">
+        <div class="header">
+            <h1>RoutineMe</h1>
+            <h3>Create, Share, Practice Routines.</h3>
+            <p>Welcome, ${username}</p>
+            <button type="goToDraft" name="goToDraft" value="goToDraft" class="create-draft-button">
+                <a href="/RoutineMe/draft">Create Draft</a>
+            </button>
+        </div>
     </div>
     <div class="feed-container">
         <div class="feed">
-        <h1>RoutineMe</h1>
-        <h3>Create, Share, Practice Routines.</h3>
 
-        <p>Welcome, ${firstName}</p>
-        <c:forEach varStatus="loop" items="${routines}" var="routineVar">
-            <a href="routine?title=${routineVar.getRoutineHeader().getTitle()}&author=${routineVar.getAuthor()}&date=${routineVar.getDate()}&description=${routineVar.getDescription()}&difficulty=${routineVar.getDifficulty()}&duration=${routineVar.getDuration()}&rating=${routineVar.getRating()}">
-                <div class="viewframe">
-                    <div class="header">
+        <c:forEach varStatus="loop" items="${routines}" var="routine">
+            <div class="viewframe">
+            <a href="routine">
+                <div class="routine-image-container">
+                    <div class="routine-header">
                         <div class="routine-title">
                             <h1>
-                                ${routineVar.getTitle()}
+                                ${routine.getTitle()}
                             </h1>
                         </div>
                         <div class="routine-author">
                             <h3>
-                                ${routineVar.getAuthor()}
+                                ${routine.getAuthor()}
                             </h3>
                         </div>
                         <div class="routine-date">
                             <h4>
-                                ${routineVar.getDate()}
+                                ${routine.getDate()}
                             </h4>
                         </div>
                         <div class="routine-difficulty">
                             <h4>
-                                    Difficulty: ${routineVar.getDifficulty()}
+                                    Difficulty: ${routine.getDifficulty()}
                             </h4>
                         </div>
                         <div class="routine-duration">
                             <h4>
-                                    Duration: ${routineVar.getDuration()}
+                                    Duration: ${routine.getDuration()}
                             </h4>
                         </div>
                         <div class="routine-rating">
                             <h4>
-                                    Rating: ${routineVar.getRating()}
+                                    Rating: ${routine.getRating()}
                             </h4>
                         </div>
 
                         <div class="routine-description">
                             <p class="routine-review-text">
-                                ${routineVar.getDescription()}
+                                ${routine.getDescription()}
                             </p>
                         </div>
                     </div>
-                    <div class="routine-image">
+
+                        <img class="routine-image" src="<c:url value="resources/images/${routine.getIndex() % 6}.jpg"/>"/>
                     </div>
             </a>
-            <div class="action-bar">
-                <div class="action-bar-icons">
-                    <div class="vote">
-                        <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
-                        <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
-                    </div>
-                    <div class="start-container">
-                        <img class="start" src="<c:url value="resources/images/start.svg"/>"/>
-                    </div>
-                    <div class="bookmark-container">
-                        <img class="bookmark" src="<c:url value="resources/images/bookmark.svg"/>"/>
-                    </div>
-                    </div>
+                <div class="action-bar">
+                        <div class="action-bar-icons">
+                            <div class="vote">
+                                <form method="POST" action="/RoutineMe/upvote">
+                                    <a href="upvote">
+                                        <button type="upvote" name="upvote" value="upvote">
+                                            <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
+                                        </button>
+                                    </a>
+                                </form>
+                                <form method="POST" action="/RoutineMe/downvote">
+                                    <a href="downvote">
+                                        <button type="downvote" name="downvote" value="downvote">
+                                            <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
+                                        </button>
+                                    </a>
+                                </form>
+                            </div>
+                            <div class="start-container">
+                                <img class="start" src="<c:url value="resources/images/start.svg"/>"/>
+                            </div>
+                            <div class="bookmark-container">
+                                <img class="bookmark" src="<c:url value="resources/images/bookmark.svg"/>"/>
+                            </div>
+                        </div>
                 </div>
                 <div class="reviews">
-                    <c:forEach varStatus="loop" items="${routineVar.getReviews().getCollection()}" var="review">
+                    <c:forEach varStatus="loop" items="${routine.getReviews().getCollection()}" var="review">
                         <div class="review">
                             <h3>${review.getAuthor()}</h3>
                             <h4>${review.getDate()}</h4>

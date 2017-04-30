@@ -22,7 +22,7 @@ public class StepCollection{
     public void removeStep(Step step) {
         this.collection.remove(step);
     }
-    public ArrayList<Step> getStepCollection() {
+    public ArrayList<Step> getCollection() {
         return this.collection;
     }
 }

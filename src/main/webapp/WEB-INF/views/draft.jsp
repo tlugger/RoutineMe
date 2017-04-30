@@ -1,3 +1,4 @@
+<%@ page import="spring.controllers.RoutineHeader"%>
 <%@page isELIgnored="false" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -8,81 +9,74 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="<c:url value="resources/css/main.css?name10444=24312346"/>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
-    <title>RoutineMe Login</title>
+    <title>RoutineMe Draft</title>
 </head>
 <body>
-<div align="center">
-    <div class="viewframe">
-        <div class="header">
-            <div class="routine-title">
-                <h1>
-                    ${routine.reviews.getCollection()[0].getAuthor()}
-                </h1>
-            </div>
-            <div class="routine-author">
-                <h3>
-                    ${author}
-                </h3>
-            </div>
-            <div class="routine-date">
-                <h4>
-                    ${date}
-                </h4>
-            </div>
-            <div class="routine-difficulty">
-                <h4>
-                    Difficulty: ${difficulty}
-                </h4>
-            </div>
-            <div class="routine-duration">
-                <h4>
-                    Duration: ${duration}
-                </h4>
-            </div>
-            <div class="routine-rating">
-                <h4>
-                    Rating: ${rating}
-                </h4>
-            </div>
+<div class="draft-container">
+    <form:form name="submitForm" method="POST">
+        <div align="center">
+            <%--<h1>RoutineMe</h1>--%>
+            <%--<h3>Create, Share, Practice Routines.</h3>--%>
+            <div class="draft-block">
+                <div class="header-block">
+                    <div class = "draft-title">
+                        <h4 class="routine-title">Title</h4>
+                        <%--<div>${routine.setTitle(<input type="text" name="title" class="field"/>)}</div>--%>
+                        <div><input type="text" name="title" class="field"/></div>
 
-            <div class="routine-description">
-                <p class="routine-review-text">
-                    ${description}
-                </p>
+                </div>
+                    <div class = "draft-author">
+                        <h4 class="routine-author">Author</h4>
+                        <div><input type="text" name="author" class="field"/></div>
+                    </div>
+                    <div class = "draft-date">
+                        <h4 class="routine-date">Date</h4>
+                        <div><input type="text" name="date" class="field"/></div>
+                    </div>
+                    <div class = "draft-difficulty">
+                        <h4 class="routine-difficulty">Difficulty</h4>
+                        <div><input type="text" name="difficulty" class="field"/></div>
+                    </div>
+                    <div class = "draft-duration">
+                        <h4 class="routine-duration">Duration</h4>
+                        <div><input type="text" name="duration" class="field"/></div>
+                    </div>
+                    <div class = "draft-description">
+                        <h4 class="routine-description">Description</h4>
+                        <div><input type="text" name="description" class="field"/></div>
+                    </div>
+                    <div class = "draft-exercise">
+                        <h4 class="draft-exercise-title">First Exercise Title</h4>
+                        <div><input type="text" name="exerciseTitle" class="field"/></div>
+                        <h4 class="draft-exercise-type">Exercise Type</h4>
+                        <div><input type="text" name="exerciseType" class="field"/></div>
+                        <div class = "draft-step">
+                            <h4 class="draft-step-title">First Step Title</h4>
+                            <div><input type="text" name="step1" class="field"/></div>
+                        </div>
+                        <div class = "draft-step">
+                            <h4 class="draft-step-title">Second Step Title</h4>
+                            <div><input type="text" name="step2" class="field"/></div>
+                        </div>
+                        <div class = "draft-step">
+                            <h4 class="draft-step-title">Third Step Title</h4>
+                            <div><input type="text" name="step3" class="field"/></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="submit-block">
+                    <div></div>
+                    <a href="/routineFeed">
+                        <div><input type="submit" value="Submit" class="submitButton"/></div>
+                </a>
+                </div>
             </div>
+            <div style="color: red">${error}</div>
         </div>
-        <div class="action-bar">
-            <div class="action-bar-icons">
-                <div class="vote">
-                    <form action="" method="post">
-                        <button type="upvote" name="foo" value="upvote">
-                            <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
-                        </button>
-                    </form>
-                    <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
-                    <div>${routine.getRating()}</div>
-                </div>
-                <div class="start-container">
-                    <img class="start" src="<c:url value="resources/images/start.svg"/>"/>
-                </div>
-                <div class="bookmark-container">
-                    <img class="bookmark" src="<c:url value="resources/images/bookmark.svg"/>"/>
-                </div>
-            </div>
-        </div>
+    </form:form>
 
 
-        <div class="reviews">
-            <c:forEach varStatus="loop" items="${reviews.getCollection()}" var="review">
-                <div class="review">
-                    <h3>${review.getAuthor()}</h3>
-                    <h4>${review.getDate()}</h4>
-                    <p>${review.getReviewText()}</p>
-                </div>
-            </c:forEach>
-        </div>
-    </div>
-</div>
 </div>
 </body>
 </html>

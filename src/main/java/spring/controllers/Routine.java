@@ -9,6 +9,20 @@ public class Routine {
     private ExerciseCollection exercises;
     private ReviewCollection reviews;
     private RoutineData data;
+    private String title;
+    private String author;
+    private String date;
+    private String description;
+    private int index;
+
+    public int getIndex() {
+        return this.index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
 
     public Routine() {
         this.header = null;
@@ -19,18 +33,22 @@ public class Routine {
     }
 
 
-    public Routine( RoutineHeader header, ExerciseCollection exercises, ReviewCollection reviews, String type){
+    public Routine( RoutineHeader header, ExerciseCollection exercises, ReviewCollection reviews, String type, RoutineData data){
         this.header = header;
         this.exercises = exercises;
         this.reviews = reviews;
         this.type = type;
+        this.data = data;
     }
 
 
     //wrappers
     public String getTitle() {
+        System.out.println("getting title");
         return this.header.getTitle();
     }
+
+
     public String getAuthor() {
         return this.header.getAuthor();
     }
@@ -56,7 +74,8 @@ public class Routine {
     }
 
     public void downvote() {
-        this.data.upvote();
+
+        this.data.downvote();
     }
 
 
@@ -85,6 +104,17 @@ public class Routine {
 
     public void setReviewCollection(ReviewCollection reviews) { this.reviews = reviews; }
 
-
+    public void setTitle(String title) {
+        this.header.setTitle(title);
+    }
+    public void setAuthor(String author) {
+        this.header.setAuthor(author);
+    }
+    public void setDate(String date){
+        this.header.setDate(date);
+    }
+    public void setDescription(String description) {
+        this.header.setDescription(description);
+    }
 
 }

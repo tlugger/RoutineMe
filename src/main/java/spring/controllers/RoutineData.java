@@ -9,6 +9,18 @@ public class RoutineData {
     private int rating;
     private String difficulty;
     private String duration;
+    private Boolean voted = false;
+
+    public RoutineData() {
+
+    }
+
+
+    public RoutineData(int rating, String difficulty, String duration){
+        this.rating = rating;
+        this.difficulty = difficulty;
+        this.duration = duration;
+    }
 
     public int getRating() {
         return rating;
@@ -35,12 +47,16 @@ public class RoutineData {
     }
 
     public void upvote(){
-        this.rating = this.rating + 1;
-
+        if(!voted) {
+            this.rating = this.rating + 1;
+            voted = true;
+        }
     }
-    public void downvote(User user){
-        this.rating = this.rating - 1;
-
+    public void downvote(){
+        if(!voted) {
+            this.rating = this.rating - 1;
+            voted = true;
+        }
     }
     public void start(){
 

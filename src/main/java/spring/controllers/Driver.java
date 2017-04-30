@@ -1,12 +1,18 @@
 package spring.controllers;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RequestMethod;import java.util.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.servlet.ModelAndView;
+import java.util.UUID;
+import java.lang.reflect.*;
 
 /**
  * Created by Nhi on 4/16/17.
@@ -17,32 +23,160 @@ public class Driver {
     public User user;
     public Routine routine;
     public NavigationBar navBar;
+    public RoutineCollection routineList = new RoutineCollection();
+    public int counter = 0;
 
-    @RequestMapping(value = "/routine", method = RequestMethod.POST)
-    public String upvote(Model model, @ModelAttribute("routine") Routine routine) {
+    @RequestMapping(value = "/upvote", method = RequestMethod.POST)
+    public String upvote(Model model) {
         System.out.println("upvoted!");
-        routine.upvote();
-        return "redirect:/routine";
+        this.routineList.getCollection().get(0).upvote();
+        System.out.println(this.routine.getRating());
+        model.addAttribute("routine", this.routineList.getCollection().get(0));
+        return "routine";
+    }
+    @RequestMapping(value = "/goToDraft", method = RequestMethod.GET)
+    public String getDraft(Model model) {
+        System.out.println("upvoted!");
+        //this.routine.setTitle("Nhi's Workout");
+        System.out.println(this.routine.getTitle());
+        Routine routine = new Routine();
+        model.addAttribute("routine", routine);
+        return "draft";
     }
 
-    @RequestMapping(value = "/routineFeed", method = RequestMethod.GET)
+    @RequestMapping(value="/draft", method = RequestMethod.GET)
+    public String initDraft(Model model) {
+        model.addAttribute("msg", "Enter your email.");
+        return "draft";
+    }
+
+    @RequestMapping(value="/draft", method = RequestMethod.POST)
+    public String submit(@ModelAttribute("draftBean") DraftBean draft) {
+        System.out.println("title is: " + draft.getTitle());
+
+
+        Routine draftedRoutine = new Routine();
+        RoutineHeader draftedHeader = new RoutineHeader();
+        RoutineData draftedData = new RoutineData();
+
+        draftedRoutine.setRoutineHeader(draftedHeader);
+
+        draftedRoutine.setAuthor(draft.getAuthor());
+        draftedRoutine.setTitle(draft.getTitle());
+        draftedRoutine.setDescription(draft.getDescription());
+        draftedData.setDifficulty(draft.getDifficulty());
+        draftedData.setDuration(draft.getDuration());
+        //draftedRoutine.setDate(dateGenerator);
+
+        StepCollection steps = new StepCollection();
+        Step step1 = new Step();
+        Step step2 = new Step();
+        Step step3 = new Step();
+
+        step1.setStepText(draft.getStep1());
+        step2.setStepText(draft.getStep2());
+        step3.setStepText(draft.getStep3());
+
+
+        steps.addStep(step1);
+        steps.addStep(step2);
+        steps.addStep(step3);
+
+        ExerciseCollection exercises = new ExerciseCollection();
+
+        Exercise exercise = new Exercise();
+        exercise.setStepCollection(steps);
+        exercise.setTitle(draft.getExerciseTitle());
+        exercise.setExerciseType(draft.getExerciseType());
+
+        exercises.addExercise(exercise);
+
+        draftedRoutine.setExerciseCollection(exercises);
+
+        draftedRoutine.setData(draftedData);
+
+        draftedRoutine.setIndex(counter);
+
+        counter++;
+
+
+        this.routineList.addRoutine(draftedRoutine);
+
+        return "redirect:/routineFeed";
+
+    }
+
+
+    @RequestMapping(value = "/downvote", method = RequestMethod.POST)
+    public String downvote(Model model) {
+        System.out.println("downvoted!");
+        this.routineList.getCollection().get(0).downvote();
+        System.out.println(this.routine.getRating());
+        model.addAttribute("routine", this.routineList.getCollection().get(0));
+        return "routine";
+    }
+
+    @RequestMapping(value = "/sortByAuthor", method = RequestMethod.POST)
+    public String sortByAuthor(Model model) {
+        model.addAttribute("routines", this.routineList.sortByAuthor());
+        return "redirect:/routineFeed";
+    }
+
+    @RequestMapping(value = "/sortByTitle", method = RequestMethod.POST)
+    public String sortByTitle(Model model) {
+        model.addAttribute("routines", this.routineList.sortByTitle());
+        return "redirect:/routineFeed";
+    }
+
+    @RequestMapping(value = "/sortByDate", method = RequestMethod.POST)
+    public String sortByDate(Model model) {
+        model.addAttribute("routines", this.routineList.sortByDate());
+        return "redirect:/routineFeed";
+    }
+
+    @RequestMapping(value = "/filterByMixed", method = RequestMethod.POST)
+    public String filterByMixed(Model model) {
+        model.addAttribute("routines", this.routineList.sortByDate());
+        return "redirect:/routineFeed";
+    }
+
+    @RequestMapping(value = "/filterByStrength", method = RequestMethod.POST)
+    public String filterByStrength(Model model) {
+        model.addAttribute("routines", this.routineList.sortByDate());
+        return "redirect:/routineFeed";
+    }
+
+    @RequestMapping(value = "/filterByCardio", method = RequestMethod.POST)
+    public String filterByCardio(Model model) {
+        model.addAttribute("routines", this.routineList.sortByDate());
+        return "redirect:/routineFeed";
+    }
+
+    @RequestMapping(value = "/sortByNoFilter", method = RequestMethod.POST)
+    public String sortByNoFilter(Model model) {
+        model.addAttribute("routines", this.routineList.getCollection());
+        return "redirect:/routineFeed";
+    }
+
+
+    @RequestMapping(value = "/routineFeed", method = {RequestMethod.GET, RequestMethod.POST})
     public String init(Model model) {
-        model.addAttribute("msg", "Enter your email address to sign in or create an account on RoutineMe");
 
-        List<Routine> list = new ArrayList<Routine>();
 
+
+        //this.routineList = new RoutineCollection();
         User user = new User();
 
-        routine = new Routine();
+        this.routine = new Routine();
 
         RoutineHeader header = new RoutineHeader();
         RoutineData data = new RoutineData();
         ExerciseCollection exercises = new ExerciseCollection();
         ReviewCollection reviews = new ReviewCollection();
 
-        header.setTitle("On The Go");
+        header.setTitle("ZOn The Go");
         header.setAuthor("Jose Canizares");
-        header.setDate("April 24, 2017");
+        header.setDate("2017-02-14");
         header.setDescription("A realistic weightlifting exercise for most ages. Give it a go!");
         this.routine.setRoutineHeader(header);
 
@@ -152,7 +286,7 @@ public class Driver {
 
         header2.setTitle("Weights");
         header2.setAuthor("Adam Heaton");
-        header2.setDate("April 25, 2017");
+        header2.setDate("2017-02-04");
         header2.setDescription("A realistic weightlifting exercise for most ages. Give it a go!");
         routine2.setRoutineHeader(header2);
 
@@ -223,14 +357,16 @@ public class Driver {
 
         routine2.setExerciseCollection(exercises);
 
-        RoutineCollection routineList = new RoutineCollection();
-        routineList.addRoutine(routine);
-        routineList.addRoutine(routine2);
+        //RoutineCollection routineList = new RoutineCollection();
+//        this.routineList.addRoutine(this.routine);
+        //this.routineList.addRoutine(routine2);
         //routineList.addRoutine(routine3);
         //routineList.addRoutine(routine4);
-        routineList.sortByAuthor();
+        //routineList.sortByAuthor();
 
-        model.addAttribute("routines", routineList.getSortedCollection());
+        model.addAttribute("routines", this.routineList.getCollection());
+
+        //System.out.println(routine2.getDifficulty());
 
         return "routineFeed";
     }
@@ -239,12 +375,9 @@ public class Driver {
 
 
     @RequestMapping(value = "/routine", method = RequestMethod.GET)
-    public String goToRoutine(Model model, @RequestParam("title") String title, @RequestParam("author") String author, @RequestParam("description") String description, @RequestParam("date") String date){
-        model.addAttribute("title", title);
-        model.addAttribute("author", author);
-        model.addAttribute("date", date);
-        model.addAttribute("description", description);
-        model.addAttribute("routine", routine);
+    public String goToRoutine(Model model){
+        model.addAttribute("routine", this.routineList.getCollection().get(0));
+        System.out.println("going to focus routine.");
         return "routine";
     }
 
