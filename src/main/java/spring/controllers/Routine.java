@@ -13,6 +13,15 @@ public class Routine {
     private String author;
     private String date;
     private String description;
+    private int index;
+
+    public int getIndex() {
+        return this.index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
 
 
     public Routine() {

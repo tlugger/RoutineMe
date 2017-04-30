@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="<c:url value="resources/css/main.css?name44=24312346"/>" rel="stylesheet">
+    <link href="<c:url value="resources/css/main.css?ndse4s4=2f312346"/>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
     <title>RoutineMe Login</title>
 </head>
@@ -14,7 +14,8 @@
     <div align="center">
         <div class="viewframe">
             <div class="header">
-                <a href="routineFeed">Back</a>
+                <a href="routineFeed" class="back-button">&lt; Back</a>
+                <div class="routine-image-container">
                 <div class="routine-title">
                     <h1>
                         ${routine.getTitle()}
@@ -51,6 +52,9 @@
                         ${routine.getDescription()}
                     </p>
                 </div>
+
+                    <img class="routine-image" src="<c:url value="resources/images/${routine.getIndex() % 6}.jpg"/>"/>
+                </div>
             </div>
             <div class="action-bar">
                 <div class="action-bar-icons">
@@ -78,6 +82,19 @@
                         <img class="bookmark" src="<c:url value="resources/images/bookmark.svg"/>"/>
                     </div>
                 </div>
+            </div>
+
+
+            <div class="exercises">
+                <c:forEach varStatus="loop" items="${routine.getExercises().getCollection()}" var="exercise">
+                    <div class="exercise">
+                        <h3>${exercise.getTitle()}</h3>
+                        <h4>${exercise.getType()}</h4>
+                        <c:forEach varStatus="loop" items="${exercise.getStepCollection().getCollection()}" var="step">
+                            <p>${step.getStepText()}</p>
+                        </c:forEach>
+                    </div>
+                </c:forEach>
             </div>
 
 

@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="<c:url value="resources/css/main.css?nkg=jo5" />" rel="stylesheet">
+    <link href="<c:url value="resources/css/main.css?fn=joasdf5" />" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Questrial|Rubik" rel="stylesheet">
     <title>RoutineMe</title>
 </head>
@@ -56,6 +56,20 @@
                     </button>
                 </a>
             </form>
+            <form method="POST" action="/RoutineMe/routineFeed">
+                <a href="routineFeed">
+                    <button type="filterByCardio" name="filterByCardio" value="filterByCardio" class="sortButton">
+                        <img class="profile-pic" src="<c:url value="resources/images/profile.svg"/>"/>
+                    </button>
+                </a>
+            </form>
+                <a href="/RoutineMe/login">
+                    <button type="filterByCardio" name="filterByCardio" value="filterByCardio" class="sortButton">
+                        Logout
+                    </button>
+                </a>
+
+
             <%--<form method="POST" action="/RoutineMe/sortByNoFilter">--%>
                 <%--<a href="sortByNoFilter">--%>
                     <%--<button type="sortByNoFilter" name="sortByNoFilter" value="sortByNoFilter" class="sortButton">--%>
@@ -81,6 +95,7 @@
         <c:forEach varStatus="loop" items="${routines}" var="routine">
             <div class="viewframe">
             <a href="routine">
+                <div class="routine-image-container">
                     <div class="routine-header">
                         <div class="routine-title">
                             <h1>
@@ -119,14 +134,27 @@
                             </p>
                         </div>
                     </div>
-                    <div class="routine-image">
+
+                        <img class="routine-image" src="<c:url value="resources/images/${routine.getIndex() % 6}.jpg"/>"/>
                     </div>
             </a>
                 <div class="action-bar">
                         <div class="action-bar-icons">
                             <div class="vote">
-                                <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
-                                <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
+                                <form method="POST" action="/RoutineMe/upvote">
+                                    <a href="upvote">
+                                        <button type="upvote" name="upvote" value="upvote">
+                                            <img class="upvote" src="<c:url value="resources/images/upvote.svg"/>"/>
+                                        </button>
+                                    </a>
+                                </form>
+                                <form method="POST" action="/RoutineMe/downvote">
+                                    <a href="downvote">
+                                        <button type="downvote" name="downvote" value="downvote">
+                                            <img class="downvote" src="<c:url value="resources/images/downvote.svg"/>"/>
+                                        </button>
+                                    </a>
+                                </form>
                             </div>
                             <div class="start-container">
                                 <img class="start" src="<c:url value="resources/images/start.svg"/>"/>

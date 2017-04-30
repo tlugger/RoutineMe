@@ -20,7 +20,7 @@ public class Exercise {
     public StepCollection getStepCollection() {
         return stepCollection;
     }
-    public String getExerciseType() { return type; }
+    public String getType() { return type; }
 
     public void setTitle(String title) {
         this.title = title;

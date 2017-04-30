@@ -1,4 +1,5 @@
 package spring.controllers;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,7 @@ public class Driver {
     public Routine routine;
     public NavigationBar navBar;
     public RoutineCollection routineList = new RoutineCollection();
-
+    public int counter = 0;
 
     @RequestMapping(value = "/upvote", method = RequestMethod.POST)
     public String upvote(Model model) {
@@ -43,48 +44,15 @@ public class Driver {
         return "draft";
     }
 
-//    @RequestMapping(value = "/draftTest", method = RequestMethod.POST)
-//    public String submitDraft(Model model, @RequestParam("title") String title) {
-//        System.out.println("title is" + title);
-//        this.routine.setTitle(title);
-//        model.addAttribute("title", title);
-//        return "draftTest";
-//    }
-//
-//
-//    @RequestMapping(value="/draftTest", method=RequestMethod.GET)
-//    public String submitDraft(Model model, @PathVariable("routineHeader") String routineHeader) {
-//        System.out.println("title is" + routine.getTitle());
-//        this.routine.setTitle(routine.getTitle());
-//        model.addAttribute("title", routine.getTitle());
-//        return "draftTest";
-//    }
-
     @RequestMapping(value="/draft", method = RequestMethod.GET)
     public String initDraft(Model model) {
-        model.addAttribute("msg", "Enter your");
+        model.addAttribute("msg", "Enter your email.");
         return "draft";
     }
-
 
     @RequestMapping(value="/draft", method = RequestMethod.POST)
     public String submit(@ModelAttribute("draftBean") DraftBean draft) {
         System.out.println("title is: " + draft.getTitle());
-
-//        RoutineHeader param1;
-//        ExerciseCollection param2;
-//        ReviewCollection param3;
-//        String param4;
-//        RoutineData param5;
-//        String className = "spring.controllers.Routine";
-//        Class cl = Class.forName("spring.controllers.Routine");
-//        Constructor con = cl.getConstructor(RoutineHeader.class, ExerciseCollection.class, ReviewCollection.class, String.class, RoutineData.class);
-//        Object xyz = con.newInstance(param1, param2, param3, param4, param5);
-//
-//
-//        Routine myInstance = Class.forName("myClass").newInstance();
-//        UUID routineID = UUID.randomUUID();
-//        routineID = Routine.newInstance()
 
 
         Routine draftedRoutine = new Routine();
@@ -100,7 +68,37 @@ public class Driver {
         draftedData.setDuration(draft.getDuration());
         //draftedRoutine.setDate(dateGenerator);
 
+        StepCollection steps = new StepCollection();
+        Step step1 = new Step();
+        Step step2 = new Step();
+        Step step3 = new Step();
+
+        step1.setStepText(draft.getStep1());
+        step2.setStepText(draft.getStep2());
+        step3.setStepText(draft.getStep3());
+
+
+        steps.addStep(step1);
+        steps.addStep(step2);
+        steps.addStep(step3);
+
+        ExerciseCollection exercises = new ExerciseCollection();
+
+        Exercise exercise = new Exercise();
+        exercise.setStepCollection(steps);
+        exercise.setTitle(draft.getExerciseTitle());
+        exercise.setExerciseType(draft.getExerciseType());
+
+        exercises.addExercise(exercise);
+
+        draftedRoutine.setExerciseCollection(exercises);
+
         draftedRoutine.setData(draftedData);
+
+        draftedRoutine.setIndex(counter);
+
+        counter++;
+
 
         this.routineList.addRoutine(draftedRoutine);
 

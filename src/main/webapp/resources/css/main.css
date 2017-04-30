@@ -10,6 +10,15 @@ body {
     padding: 0;
 }
 
+.back-button {
+    text-decoration: none;
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+    float: left;
+    width: 100%;
+}
+
 .header-container {
     display: flex;
     justify-content: center;
@@ -130,6 +139,7 @@ input.submitButton:hover {
     padding-left: 20px;
     font-weight: 100;
     padding-right: 20px;
+    outline: none;
 }
 
 .create-draft-button:hover {
@@ -150,6 +160,10 @@ input.submitButton:hover {
 
 }
 
+.profile-pic {
+    width: 5%;
+}
+
 .routine-header {
     background: #fffdfb;
     text-align: left;
@@ -157,10 +171,13 @@ input.submitButton:hover {
     padding: 10px;
 }
 
+.routine-image-container {
+    width: 100%;
+    background: #f1efee;
+}
+
 .routine-image {
     width: 100%;
-    height: 50vh;
-    background: #f1efee;
 }
 
 .action-bar {

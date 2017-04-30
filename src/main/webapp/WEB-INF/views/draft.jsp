@@ -45,14 +45,25 @@
                         <h4 class="routine-description">Description</h4>
                         <div><input type="text" name="description" class="field"/></div>
                     </div>
-                    <div class = "draft-description">
-                        <h4 class="routine-description">Review</h4>
-                        <div><input type="text" name="reviewText" class="field"/></div>
+                    <div class = "draft-exercise">
+                        <h4 class="draft-exercise-title">First Exercise Title</h4>
+                        <div><input type="text" name="exerciseTitle" class="field"/></div>
+                        <h4 class="draft-exercise-type">Exercise Type</h4>
+                        <div><input type="text" name="exerciseType" class="field"/></div>
+                        <div class = "draft-step">
+                            <h4 class="draft-step-title">First Step Title</h4>
+                            <div><input type="text" name="step1" class="field"/></div>
+                        </div>
+                        <div class = "draft-step">
+                            <h4 class="draft-step-title">Second Step Title</h4>
+                            <div><input type="text" name="step2" class="field"/></div>
+                        </div>
+                        <div class = "draft-step">
+                            <h4 class="draft-step-title">Third Step Title</h4>
+                            <div><input type="text" name="step3" class="field"/></div>
+                        </div>
                     </div>
-                    <div class = "draft-description">
-                        <h4 class="routine-description">Rating</h4>
-                        <div><input type="text" name="rating" class="field"/></div>
-                    </div>
+
                 </div>
                 <div class="submit-block">
                     <div></div>
